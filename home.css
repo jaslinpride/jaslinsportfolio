@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('CS.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #FFD6E9;
+        font-family: "Noto Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+         font-variation-settings:
+        "wdth" 100;
+}
+
+nav {
+    display: flex;
+    margin-top: 6rem;
+    width: 70%;
+    margin: auto;
+    padding: 2rem;
+    justify-content: center;
+    color: #E79898;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav .mainMenu {
+    display: flex;
+    gap: 9%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 3rem;
+}
+
+nav .mainMenu li {
+    list-style: none;
+}
+
+nav .mainMenu li a {
+    text-decoration: none;
+}
+
+nav .mainMenu li a:hover {
+    background-color: #ffffff;
+    opacity: 30%;
+    padding: 0.6rem;
+    transition: 2s ease-out;
+    color: #5C2C06;
+}
+
+.welcome {
+    margin-top: 8rem;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 40px;
+    color: #5C2C06;
+    padding: 0.7rem;
+    gap: 5%;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.header {
+    margin-top: 8rem;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 30px;
+    color: #5C2C06;
+    background-size: cover;
+    background-position: center;
+    background: #E79898;
+    opacity: 80%;
+    padding: 0.7rem;
+    gap: 5%;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 8rem;
+}
+
+.header p {
+    margin-top: 0.5rem;
+}
+
+footer {
+    margin-left: 6rem;
+    padding: 0.7rem;
+    margin-top: 15rem;
+    margin: auto;
+    justify-content: center;
+    gap: 5%;
+    width: 90%;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #5C2C06;
+}
+
+.icons {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-top: 12rem;
+    font-size: 2px;
+    color: #5C2C06;
+    width: 20%;
+}
+
+.icon-img-1 img {
+    width: 100%;
+    fill: #5C2C06;
+    border: #5C2C06;
+}
+
+.icon-img-2 img {
+    width: 100%;
+    fill: #5C2C06;
+    border: #5C2C06;
+}
+
+.copyright {
+    text-align: center;
+    padding: 5rem;
+    margin-top: 0.7rem;
+    color: #5C2C06;
+    font-size: 16px;
+}
