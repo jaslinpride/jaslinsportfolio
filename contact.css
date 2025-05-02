@@ -218,5 +218,51 @@ footer {
 }
 
 @media(max-width: 800px) {
+    nav .mainMenu {
+        background-color: white;
+        width: 80%;
+        height: 36vh;
+        gap: 0%; 
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        gap: 6%;
+        animation: slideInFromRight 2s ease-out;
+        transition: top 1.5s ease;
+        display: none;
+        opacity: 80%;
+    }
+
+    .new-nav {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+        
+    .logo p {
+        font-size: 12px;
+        margin: 0;
+        margin-left: 1rem;
+        margin-top: 0.8rem;
+    }
     
+    .openMenu {
+        display: grid;
+    }
+
+    .closeMenu {
+        display: grid;
+    }
+
+    .openMenu img {
+        width: 10%;
+        margin-left: 18rem;
+    }
+
+    .closeMenu img {
+        width: 5%;
+        margin-left: 6rem;
+        margin-top: 2rem;
+    }
 }
