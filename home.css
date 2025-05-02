@@ -33,6 +33,14 @@ nav {
     font-weight: 500;
 }
 
+.openMenu {
+    display: none;
+}
+
+.closeMenu {
+    display: none;
+}
+
 nav .mainMenu {
     display: flex;
     gap: 9%;
@@ -173,7 +181,7 @@ footer {
         margin-left: 1rem;
         margin-top: 0.8rem;
     }
-    
+
     .openMenu {
         display: grid;
     }
@@ -191,5 +199,31 @@ footer {
         width: 5%;
         margin-left: 6rem;
         margin-top: 2rem;
+    }
+
+    .icon-img-1 img {
+        width: 100%;
+        fill: #5C2C06;
+        border: #5C2C06;
+    }
+    
+    .icon-img-2 img {
+        width: 100%;
+        fill: #5C2C06;
+        border: #5C2C06;
+    }
+    
+    .icon-img-3 img {
+        width: 15%;
+        fill: #5C2C06;
+        border: #5C2C06;
+    }
+    
+    .copyright {
+        text-align: center;
+        padding: 5rem;
+        margin-top: 0.7rem;
+        color: #5C2C06;
+        font-size: 16px;
     }
 }
