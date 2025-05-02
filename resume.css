@@ -67,7 +67,7 @@ nav .mainMenu li a {
 
 .page-viewer{
     position: relative;
-    max-width: 90%;
+    max-width: 55%;
     margin: auto;
     overflow: hidden; 
     display: flex;
