@@ -144,6 +144,25 @@ footer {
     border: #5C2C06;
 }
 
+.author {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 3rem;
+    gap: 5%;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.author img {
+    width: 2.5%
+}
+
 .copyright {
     text-align: center;
     padding: 5rem;
