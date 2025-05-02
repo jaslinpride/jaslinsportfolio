@@ -130,6 +130,12 @@ footer {
     border: #5C2C06;
 }
 
+.icon-img-3 img {
+    width: 15%;
+    fill: #5C2C06;
+    border: #5C2C06;
+}
+
 .copyright {
     text-align: center;
     padding: 5rem;
