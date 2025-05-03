@@ -8,7 +8,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
 body {
     background-size: cover;
     background-position: center;
@@ -130,6 +130,7 @@ nav .mainMenu li a:hover {
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1.5;
   }
   
   .service-card:hover {
@@ -157,6 +158,39 @@ nav .mainMenu li a:hover {
   .icon-list {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 1px;
+  }
+
+  .icon-list-1 img {
+    width: 50px;
+    height: 20px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .icon-list-2 img {
+    width: 50px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .icon-list-3 img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .icon-list-4 img {
+    width: 50px;
+    height: 20px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
   }
   
   .icon-list li {
