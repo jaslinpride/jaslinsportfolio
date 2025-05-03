@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     background-size: cover;
@@ -16,9 +16,8 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-image: url('CS.png');
-    background-size: cover;
-    background-position: center;
     background-color: #e1d1c6;
+    color: #5C2C06;
 }
 
 /* Navigation */
@@ -62,37 +61,14 @@ nav .mainMenu li a:hover {
     color: #5C2C06;
 }
 
-.header {
-    margin-top: 8rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 40px;
-    color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #FFBCDA;
-    padding: 0.7rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    margin-top: 8rem;
-}
-
-.header p {
-    margin-top: 0.5rem;
-}
-
 .services {
     line-height: 1.6;
     text-align: center;
     font-size: 60px;
     color: #5C2C06;
     padding: 0.5rem;
-    gap: 5%;
     width: 100%;
     margin: auto;
-    justify-content: center;
     margin-top: 6rem;
     font-weight: 1000;
 }
@@ -110,160 +86,112 @@ nav .mainMenu li a:hover {
 .services-section {
     padding: 4rem 2rem;
     text-align: center;
-  }
-  
-  .services-heading {
-    font-size: 36px;
-    color: #5C2C06;
-    margin-bottom: 2rem;
-  }
-  
-  .services-grid {
+}
+
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-  }
-  
-  .service-card {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
     background-color: #FFE5EC;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     line-height: 1.5;
-  }
-  
-  .service-card:hover {
+    color: #5C2C06;
+}
+
+.service-card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  }
-  
-  .service-card h3 {
-    color: #5C2C06;
+}
+
+.service-card h3 {
     font-size: 24px;
     margin-bottom: 1rem;
-  }
-  
-  .service-sub {
+    color: #5C2C06;
+}
+
+.service-sub {
     margin-bottom: 1rem;
     text-align: left;
-  }
-  
-  .service-card ul {
+}
+
+.service-card ul {
     text-align: left;
     padding-left: 1rem;
     list-style-type: disc;
-  }
-  
-  .icon-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 1px;
-  }
+    color: #5C2C06;
+}
 
-  .icon-list-1 img {
-    width: 50px;
-    height: 20px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  .icon-list-2 img {
-    width: 50px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  .icon-list-3 img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  }
-
-  .icon-list-4 img {
-    width: 50px;
-    height: 20px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .icon-list li {
+.icon-list li {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.75rem;
-  }
-  
-  .service-icon {
+}
+
+.icon-list-1 img,
+.icon-list-2 img,
+.icon-list-3 img,
+.icon-list-4 img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.service-icon {
     width: 50px;
     margin-bottom: 1rem;
-  }  
-
-.services p {
-    margin-top: 0.5rem;
 }
 
 footer {
-    margin-left: 6rem;
     padding: 0.7rem;
     margin-top: 15rem;
-    margin: auto;
-    justify-content: center;
-    gap: 5%;
-    width: 90%;
-    background-size: cover;
-    background-position: center;
     text-align: center;
     color: #5C2C06;
+    width: 90%;
+    margin: auto;
 }
 
 .icons {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
     display: flex;
+    justify-content: center;
+    gap: 2rem;
     margin-top: 12rem;
-    font-size: 2px;
-    color: #5C2C06;
-    width: 20%;
 }
 
-.icon-img-1 img,
-.icon-img-2 img,
-.icon-img-3 img {
+.icons img {
     width: 40px;
     height: 40px;
-    margin: 0 10px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.icon-img-1 img:hover,
-.icon-img-2 img:hover,
-.icon-img-3 img:hover {
+.icons img:hover {
     transform: scale(1.15);
 }
 
 .copyright {
     text-align: center;
     padding: 5rem;
-    margin-top: 0.7rem;
-    color: #5C2C06;
     font-size: 16px;
 }
 
 @media(max-width: 800px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
     nav .mainMenu {
         background-color: white;
         width: 80%;
         height: 36vh;
-        gap: 0%; 
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -275,24 +203,7 @@ footer {
         opacity: 80%;
     }
 
-    .new-nav {
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-        
-    .logo p {
-        font-size: 12px;
-        margin: 0;
-        margin-left: 1rem;
-        margin-top: 0.8rem;
-    }
-
-    .openMenu {
-        display: grid;
-    }
-
-    .closeMenu {
+    .openMenu, .closeMenu {
         display: grid;
     }
 
@@ -307,52 +218,12 @@ footer {
         margin-top: 2rem;
     }
 
-    .icon-img-1 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
+    .icons {
+        flex-direction: column;
     }
-    
-    .icon-img-2 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-3 img {
-        width: 15%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .author {
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .author img {
-        width: 4%
-    }
-    
+
     .copyright {
-        margin-top: 0.7rem;
-        margin-bottom: 8rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
+        font-size: 12px;
         padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-        justify-content: center;
     }
 }
