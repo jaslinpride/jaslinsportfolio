@@ -80,7 +80,7 @@
     50% { opacity: 0; }
   }
   
-  .resume-slider-container {
+  .resume-slider-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,13 +96,19 @@
   
   .resume-slider {
     display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 2rem;
+    width: 100%;
   }
   
   .resume-card {
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.3s ease;
   }
   
@@ -115,8 +121,10 @@
     max-width: 350px;
     border-radius: 10px;
     object-fit: contain;
+    display: block;
   }
   
+  /* Arrow Buttons */
   .arrow {
     font-size: 2rem;
     background: none;
@@ -130,6 +138,7 @@
     transform: scale(1.2);
   }
   
+  /* Resume Download */
   .resume-download {
     text-align: center;
     margin-top: 2rem;
@@ -187,5 +196,58 @@
     margin-top: 0.7rem;
     color: #5C2C06;
     font-size: 16px;
+  }
+  
+  /* Mobile Responsive */
+  @media(max-width: 800px) {
+    nav .mainMenu {
+      background-color: white;
+      width: 80%;
+      height: 36vh;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      gap: 6%;
+      animation: slideInFromRight 2s ease-out;
+      transition: top 1.5s ease;
+      display: none;
+      opacity: 80%;
+    }
+  
+    .openMenu, .closeMenu {
+      display: grid;
+    }
+  
+    .openMenu img {
+      width: 10%;
+      margin-left: 18rem;
+    }
+  
+    .closeMenu img {
+      width: 5%;
+      margin-left: 6rem;
+      margin-top: 2rem;
+    }
+  
+    .resume-slider-wrapper {
+      flex-direction: column;
+      padding: 1rem;
+    }
+  
+    .resume-card img {
+      max-width: 90%;
+      height: auto;
+    }
+  
+    .icons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .copyright {
+      padding: 3rem;
+      font-size: 10px;
+    }
   }
   
