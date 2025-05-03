@@ -85,7 +85,7 @@ nav .mainMenu li a:hover {
 }
 
 .title-section h1 {
-    font-size: 48px;
+    font-size: 60px;
     font-weight: 800;
     color: #5C2C06;
     transition: transform 0.3s ease-in-out;
@@ -107,7 +107,7 @@ nav .mainMenu li a:hover {
 .welcome {
     line-height: 1.6;
     text-align: center;
-    font-size: 60px;
+    font-size: 36px;
     color: #5C2C06;
     padding: 0.5rem;
     width: 100%;
@@ -220,6 +220,7 @@ footer {
         background-color: white;
         width: 80%;
         height: 36vh;
+        gap: 0%; 
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -229,6 +230,9 @@ footer {
         transition: top 1.5s ease;
         display: none;
         opacity: 80%;
+        margin-left: 2rem;
+        justify-content: center;
+        text-align: center;
     }
 
     .new-nav {
@@ -236,7 +240,7 @@ footer {
         top: 0;
         z-index: 1000;
     }
-
+        
     .logo p {
         font-size: 12px;
         margin: 0;
@@ -244,7 +248,11 @@ footer {
         margin-top: 0.8rem;
     }
 
-    .openMenu, .closeMenu {
+    .openMenu {
+        display: grid;
+    }
+
+    .closeMenu {
         display: grid;
     }
 
@@ -258,13 +266,151 @@ footer {
         margin-left: 6rem;
         margin-top: 2rem;
     }
+    
+    .hidden {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: all 0.6s ease-out;
+    }
+    
+    .show {
+        opacity: 1;
+        transform: scale(1);
+    }
 
-    .icon-img-1 img,
-    .icon-img-2 img,
-    .icon-img-3 img {
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Title Section */
+.title-section {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.title-section h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #5C2C06;
+    transition: transform 0.3s ease-in-out;
+}
+
+.title-section h1:hover {
+    transform: scale(1.05);
+}
+
+.title-section h2 {
+    font-size: 16px;
+    color: #8B4513;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Welcome Text */
+.welcome {
+    line-height: 1.6;
+    text-align: center;
+    font-size: 22px;
+    color: #5C2C06;
+    padding: 0.5rem;
+    width: 100%;
+    margin: 6rem auto 2rem;
+    font-weight: 1000;
+}
+
+#typewriter-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+/* GitHub Contributions */
+.github-calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    padding: .5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    text-align: center;
+}
+
+.github-calendar h3 {
+    color: #5C2C06;
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.github-calendar p {
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.github-calendar img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+.github-calendar .contribution-scale span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* Footer */
+footer {
+    margin-left: 6rem;
+    padding: 0.7rem;
+    margin-top: 15rem;
+    margin: auto;
+    justify-content: center;
+    gap: 5%;
+    width: 90%;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #5C2C06;
+}
+
+.icons {
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-top: 12rem;
+    font-size: 2px;
+    color: #5C2C06;
+    
+}
+
+    .icon-img-1 img {
         width: 100%;
         fill: #5C2C06;
         border: #5C2C06;
+    }
+
+    .icon-img-2 img {
+        width: 100%;
+        fill: #5C2C06;
+        border: #5C2C06;
+    }
+
+    .icon-img-3 img {
+        width: 40%;
     }
 
     .copyright {
