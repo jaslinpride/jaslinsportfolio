@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -10,57 +10,126 @@
   }
   
   body {
-    background-size: cover;
-    background-position: center;
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    background-image: url('CS.png');
+    background: url('CS.png') no-repeat center center fixed;
+    background-size: cover;
     background-color: #e1d1c6;
-  }
-  
-  /* Navigation */
-  nav {
-    display: flex;
-    margin-top: 6rem;
-    width: 70%;
-    margin: auto;
-    padding: 2rem;
-    justify-content: center;
-    color: #E79898;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  
-  .openMenu, .closeMenu {
-    display: none;
-  }
-  
-  nav .mainMenu {
-    display: flex;
-    gap: 9%;
-    text-align: center;
-    justify-content: center;
-    margin-right: 3rem;
-  }
-  
-  nav .mainMenu li {
-    list-style: none;
-  }
-  
-  nav .mainMenu li a {
-    text-decoration: none;
-  }
-  
-  nav .mainMenu li a:hover {
-    background-color: #ffffff;
-    opacity: 30%;
-    padding: 0.6rem;
-    transition: 2s ease-out;
     color: #5C2C06;
   }
   
-  /* Resume Section */
+  /* ------------------ NAVIGATION ------------------ */
+  nav.desktop-nav {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  nav.desktop-nav a {
+    color: #5C2C06;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav.desktop-nav a:hover {
+    background-color: #FFE5EC;
+    color: #8B4513;
+  }
+  
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+  
+  .nav-toggle {
+    width: 50px;
+    height: 50px;
+    background-color: #5C2C06;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-lines {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .nav-lines::before,
+  .nav-lines::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+  }
+  
+  .nav-lines::before {
+    top: -6px;
+  }
+  
+  .nav-lines::after {
+    top: 6px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #FFE5EC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 4rem;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .nav-menu.open {
+    width: 250px;
+    height: 360px;
+    border-radius: 50% / 40%;
+    opacity: 1;
+    pointer-events: auto;
+    padding-top: 4rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-menu a {
+    color: #5C2C06;
+    text-decoration: none;
+    margin: 0.75rem 0;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  /* ------------------ RESUME SECTION ------------------ */
   .resume-title {
     text-align: center;
     font-size: 48px;
@@ -139,7 +208,6 @@
     display: block;
   }
   
-  /* Arrow Buttons */
   .arrow {
     font-size: 2rem;
     background: none;
@@ -153,7 +221,6 @@
     transform: scale(1.2);
   }
   
-  /* Resume Download */
   .resume-download {
     text-align: center;
     margin-top: 2rem;
@@ -163,86 +230,61 @@
     width: 40px;
   }
   
-  /* Footer */
+  /* ------------------ FOOTER ------------------ */
   footer {
-    margin-left: 6rem;
-    padding: 0.7rem;
-    margin-top: 10rem;
-    margin: auto;
-    justify-content: center;
-    gap: 5%;
-    width: 90%;
-    background-size: cover;
-    background-position: center;
     text-align: center;
-    color: #5C2C06;
+    padding: 3rem 1rem 5rem;
   }
   
   .icons {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
     display: flex;
-    margin-top: 12rem;
-    font-size: 2px;
-    color: #5C2C06;
-    width: 20%;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
   }
   
-  .icon-img-1 img,
-  .icon-img-2 img,
-  .icon-img-3 img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
+  .icons > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icons img {
+    width: 30px;
+    height: 30px;
     cursor: pointer;
+    transition: transform 0.3s ease;
   }
   
-  .icon-img-1 img:hover,
-  .icon-img-2 img:hover,
-  .icon-img-3 img:hover {
+  .icons img:hover {
     transform: scale(1.15);
   }
   
-  .copyright {
-    text-align: center;
-    padding: 5rem;
-    margin-top: 0.7rem;
+  footer .copyright {
+    font-size: 12px;
     color: #5C2C06;
-    font-size: 16px;
   }
   
-  /* Mobile Responsive */
-  @media(max-width: 800px) {
-    nav .mainMenu {
-      background-color: white;
-      width: 80%;
-      height: 36vh;
-      flex-direction: column;
-      position: fixed;
-      top: 0;
-      z-index: 1;
-      gap: 6%;
-      animation: slideInFromRight 2s ease-out;
-      transition: top 1.5s ease;
+  /* ------------------ SCROLL REVEAL ------------------ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+  /* ------------------ RESPONSIVE ------------------ */
+  @media (max-width: 800px) {
+    nav.desktop-nav {
       display: none;
-      opacity: 80%;
     }
   
-    .openMenu, .closeMenu {
-      display: grid;
-    }
-  
-    .openMenu img {
-      width: 10%;
-      margin-left: 18rem;
-    }
-  
-    .closeMenu img {
-      width: 5%;
-      margin-left: 6rem;
-      margin-top: 2rem;
+    .mobile-nav {
+      display: block;
     }
   
     .resume-slider-wrapper {
@@ -256,14 +298,28 @@
     }
   
     .icons {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: nowrap;
       gap: 1rem;
+      justify-content: center;
     }
   
     .copyright {
       padding: 3rem;
       font-size: 10px;
     }
-  }
   
+    .resume-title {
+      font-size: 32px;
+    }
+  
+    .nav-menu a {
+      font-size: 0.95rem;
+    }
+  
+    .icons img {
+      width: 28px;
+      height: 28px;
+    }
+  }
   
