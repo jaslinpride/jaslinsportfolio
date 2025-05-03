@@ -9,16 +9,15 @@ html {
 }
 
 body {
+    background-size: cover;
+    background-position: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     background-image: url('CS.png');
     background-size: cover;
     background-position: center;
-    background-color: #FFD6E9;
-        font-family: "Noto Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
-         font-variation-settings:
-        "wdth" 100;
+    background-color: #e1d1c6;
 }
 
 nav {
@@ -65,36 +64,57 @@ nav .mainMenu li a:hover {
     color: #5C2C06;
 }
 
+.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
 .welcome {
-    margin-top: 8rem;
     line-height: 1.6;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
+    color: #5C2C06;
+    padding: 0.5rem;
+    gap: 5%;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 6rem;
+    font-weight: 1000;
+}
+
+#typewriter-text::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+    
+.header {
+    line-height: 1.6;
+    text-align: center;
+    font-size: 24px;
     color: #5C2C06;
     padding: 0.7rem;
     gap: 5%;
-    width: 90%;
+    width: 80%;
     margin: auto;
     justify-content: center;
     margin-top: 3rem;
-}
-
-.header {
-    margin-top: 8rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 30px;
-    color: #5C2C06;
+    margin-bottom: 3rem;
     background-size: cover;
     background-position: center;
     background: #E79898;
     opacity: 80%;
-    padding: 0.7rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    margin-top: 8rem;
 }
 
 .header p {
@@ -146,11 +166,11 @@ footer {
 
 .author {
     margin-top: 6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0.7rem;
     line-height: 1.6;
     text-align: center;
     font-size: 16px;
-    color: #ffffff;
+    color: #5C2C06;
     padding: 3rem;
     gap: 5%;
     width: 100%;
@@ -238,11 +258,34 @@ footer {
         border: #5C2C06;
     }
     
-    .copyright {
+    .author {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
+        line-height: 1.6;
         text-align: center;
-        padding: 5rem;
-        margin-top: 0.7rem;
+        font-size: 10px;
         color: #5C2C06;
-        font-size: 16px;
+        padding: 3rem;
+        gap: 5%;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .author img {
+        width: 4%
+    }
+    
+    .copyright {
+        margin-top: 0.7rem;
+        margin-bottom: 8rem;
+        line-height: 1.6;
+        text-align: center;
+        font-size: 10px;
+        color: #5C2C06;
+        padding: 3rem;
+        gap: 5%;
+        width: 100%;
+        margin: auto;
+        justify-content: center;
     }
 }
