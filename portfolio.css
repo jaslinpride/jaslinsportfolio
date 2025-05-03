@@ -149,6 +149,36 @@
     50% { opacity: 0; }
   }
   
+  /* ------------------ GITHUB SECTION ------------------ */
+  .github-calendar {
+    background: #fff;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .github-calendar h3 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .github-calendar p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .github-calendar img {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+
   /* Portfolio Section */
   .portfolio-section {
     display: flex;
@@ -389,6 +419,10 @@
   
     .mobile-nav {
       display: block;
+    }
+
+    .github-calendar h3 {
+      font-size: 20px;
     }
   
     .course-card {

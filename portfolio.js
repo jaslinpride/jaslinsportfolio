@@ -27,6 +27,28 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
       });
     }
+
+     // 3. GitHub Contributions Count (last 12 months)
+     const username = "jaslinpride";
+     fetch(`https://api.github.com/users/${username}/events/public`)
+       .then((response) => response.json())
+       .then((events) => {
+         const oneYearAgo = new Date();
+         oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+   
+         const contributions = events.filter((event) => {
+           const eventDate = new Date(event.created_at);
+           return eventDate >= oneYearAgo;
+         }).length;
+   
+         const detailPara = document.createElement("p");
+         detailPara.innerHTML = `<strong>${contributions} contributions in the last year</strong>`;
+         const calendar = document.querySelector(".github-calendar");
+         if (calendar) {
+           calendar.insertBefore(detailPara, calendar.querySelector("img"));
+         }
+       })
+       .catch((err) => console.error("Failed to load GitHub contributions:", err));
   
     // Coffee Sound Effects on Social Icons
     const iconImages = document.querySelectorAll(".icons img");

@@ -170,36 +170,6 @@
     50% { opacity: 0; }
   }
   
-  /* ------------------ GITHUB SECTION ------------------ */
-  .github-calendar {
-    background: #fff;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .github-calendar h3 {
-    font-size: 24px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .github-calendar p {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 1rem;
-  }
-  
-  .github-calendar img {
-    width: 100%;
-    max-width: 700px;
-    margin-top: 1rem;
-    border-radius: 8px;
-  }
-  
   /* ------------------ FOOTER ------------------ */
   footer {
     text-align: center;
@@ -219,6 +189,7 @@
     height: 30px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-top: 14rem;
   }
   
   .icons img:hover {
@@ -268,13 +239,10 @@
       font-size: 0.95rem;
     }
   
-    .github-calendar h3 {
-      font-size: 20px;
-    }
-  
     .icons img {
       width: 28px;
       height: 28px;
+      margin-top: 14rem;
     }
   }
   
