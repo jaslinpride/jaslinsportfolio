@@ -6,245 +6,209 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio Website</title>
     <link rel="stylesheet" href="portfolio.css">
-    <style>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap" rel="stylesheet">
-        </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-    <nav>
-      <div class="openMenu">
-        <img src="hamburger.png" alt="No Hamburger" />
-      </div>
-      <ul class="mainMenu">
-        <div class="closeMenu">
-          <img src="close.png" alt="No Close" />
+        <nav>
+            <div class="openMenu">
+                <img src="hamburger.png" alt="Open Menu">
+            </div>
+            <ul class="mainMenu">
+                <div class="closeMenu">
+                    <img src="close.png" alt="Close Menu">
+                </div>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="resume.html">Resume</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="portfolio">
+        <h2 id="portfolio-typewriter"></h2>
+    </div>
+
+    <section class="portfolio-section">
+        <div class="portfolio-card">
+            <h3>Systems Engineering Projects</h3>
+            <div class="project-video">
+                <video src="astralux-sidera-demo.mp4" controls></video>
+            </div>
+            <h4 class="project-title">AstraLux Sidera Website</h4>
+            <p class="project-date">March 2025 – Ongoing</p>
+            <p class="project-description">An interactive digital platform simulating mission architectures and stakeholder interactions for space systems engineering.</p>
+            <div class="tech-icons">
+                <img src="html.svg" alt="HTML">
+                <img src="css.svg" alt="CSS">
+                <img src="Javascript.png" alt="JavaScript">
+                <img src="visual-studio-code.svg" alt="Visual Studio Code">
+            </div>
+            <div class="project-links">
+                <a href="https://your-live-site-link.com" target="_blank">
+                    <img src="external-link-icon.svg" alt="Visit Website">
+                </a>
+                <a href="https://github.com/yourusername/astralux-sidera" target="_blank">
+                    <img src="github.svg" alt="GitHub Repo">
+                </a>
+            </div>
+            <div class="project-subsection">
+                <div class="project-video">
+                    <video src="strike-system-demo.mp4" controls></video>
+                </div>
+                <h4 class="project-title">STRIKE System</h4>
+                <p class="project-date">April 2025 – Present</p>
+                <p class="project-description">A secure web application for managing Targeting, Recon, Intel, Knowledge, and Engagement workflows within defense systems.</p>
+                <div class="tech-icons">
+                    <img src="html.svg" alt="HTML">
+                    <img src="css.svg" alt="CSS">
+                    <img src="Javascript.png" alt="JavaScript">
+                    <img src="python.svg" alt="Python">
+                    <img src="sql.svg" alt="SQL">
+                </div>
+                <div class="project-links">
+                    <a href="https://your-strike-system-site.com" target="_blank">
+                        <img src="external-link-icon.svg" alt="Visit STRIKE Website">
+                    </a>
+                    <a href="https://github.com/yourusername/strike-system" target="_blank">
+                        <img src="github.svg" alt="STRIKE GitHub Repo">
+                    </a>
+                </div>
+            </div>
         </div>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </ul>
-    </nav>
-  </div>
-    <!-- Portfolio Title -->
-<div class="portfolio reveal">
-  <h2 id="portfolio-typewriter"></h2>
-</div>
 
-<section class="portfolio-section">
-  <!-- Systems Engineering Projects Card -->
-  <div class="portfolio-card reveal">
-    <h3>Systems Engineering Projects</h3>
-
-    <div class="project-video">
-      <video src="astralux-sidera-demo.mp4" controls></video>
-    </div>
-
-    <h4 class="project-title">AstraLux Sidera Website</h4>
-    <p class="project-date">March 2025 – Ongoing</p>
-    <p class="project-description">
-      An interactive digital platform simulating mission architectures and stakeholder interactions for space systems engineering.
-    </p>
-
-    <div class="tech-icons">
-      <img src="html.svg" alt="HTML">
-      <img src="css.svg" alt="CSS">
-      <img src="Javascript.png" alt="JavaScript">
-      <img src="visual-studio-code.svg" alt="Visual Studio Code">
-    </div>
-
-    <div class="project-links">
-      <a href="https://your-live-site-link.com" target="_blank">
-        <img src="external-link-icon.svg" alt="Visit Website">
-      </a>
-      <a href="https://github.com/yourusername/astralux-sidera" target="_blank">
-        <img src="github.svg" alt="GitHub Repo">
-      </a>
-    </div>
-
-    <!-- STRIKE System Project -->
-    <div class="project-subsection">
-      <div class="project-video">
-        <video src="strike-system-demo.mp4" controls></video>
-      </div>
-      <h4 class="project-title">STRIKE System</h4>
-      <p class="project-date">April 2025 – Present</p>
-      <p class="project-description">
-        A secure web application for managing Targeting, Recon, Intel, Knowledge, and Engagement workflows within defense systems.
-      </p>
-      <div class="tech-icons">
-        <img src="html.svg" alt="HTML">
-        <img src="css.svg" alt="CSS">
-        <img src="Javascript.png" alt="JavaScript">
-        <img src="python.svg" alt="Python">
-        <img src="sql.svg" alt="SQL">
-      </div>
-      <div class="project-links">
-        <a href="https://your-strike-system-site.com" target="_blank">
-          <img src="external-link-icon.svg" alt="Visit STRIKE Website">
-        </a>
-        <a href="https://github.com/yourusername/strike-system" target="_blank">
-          <img src="github.svg" alt="STRIKE GitHub Repo">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Web Development Projects -->
-  <div class="portfolio-card reveal">
-    <h3>Web Development Projects</h3>
-    <img src="web-project-thumbnail.jpg" alt="Web Project Thumbnail" class="thumbnail">
-    <h4 class="project-title">Responsive Portfolio Website</h4>
-    <p class="project-date">January 2025</p>
-    <p class="project-description">
-      A personal portfolio site designed with HTML, CSS, and JavaScript, showcasing projects with mobile responsiveness.
-    </p>
-    <div class="tech-icons">
-      <img src="html.svg" alt="HTML">
-      <img src="css.svg" alt="CSS">
-      <img src="Javascript.png" alt="JavaScript">
-    </div>
-  </div>
-
-  <!-- Machine Learning -->
-  <div class="portfolio-card reveal">
-    <h3>Machine Learning</h3>
-    <img src="ml-project-thumbnail.jpg" alt="ML Project Thumbnail" class="thumbnail">
-    <h4 class="project-title">Image Classifier</h4>
-    <p class="project-date">October 2024</p>
-    <p class="project-description">
-      A convolutional neural network (CNN) trained to classify images into categories using Python and TensorFlow.
-    </p>
-    <div class="tech-icons">
-      <img src="python.svg" alt="Python">
-      <img src="tensorflow.svg" alt="TensorFlow">
-      <img src="jupyter.svg" alt="Jupyter Notebook">
-    </div>
-  </div>
-
-  <!-- Data Analysis -->
-  <div class="portfolio-card reveal">
-    <h3>Data Analysis</h3>
-    <img src="data-analysis-thumbnail.jpg" alt="Data Analysis Project" class="thumbnail">
-    <h4 class="project-title">NASA Meteorite Dataset</h4>
-    <p class="project-date">August 2024</p>
-    <p class="project-description">
-      Exploratory data analysis on meteorite landings using pandas, matplotlib, and seaborn to identify global patterns.
-    </p>
-    <div class="tech-icons">
-      <img src="python.svg" alt="Python">
-      <img src="pandas.svg" alt="Pandas">
-      <img src="matplotlib.svg" alt="Matplotlib">
-    </div>
-  </div>
-
-  <!-- Cloud Computing -->
-  <div class="portfolio-card reveal">
-    <h3>Cloud Computing</h3>
-    <img src="cloud-computing-thumbnail.jpg" alt="Cloud Project Thumbnail" class="thumbnail">
-    <h4 class="project-title">AWS Serverless Web App</h4>
-    <p class="project-date">May 2024</p>
-    <p class="project-description">
-      A serverless CRUD app using AWS Lambda, API Gateway, and DynamoDB to manage project submissions.
-    </p>
-    <div class="tech-icons">
-      <img src="aws.svg" alt="AWS">
-      <img src="javascript.svg" alt="JavaScript">
-    </div>
-  </div>
-
-  <!-- 6. Courses Section with Horizontal Scroll -->
-    <!-- Courses -->
-<div class="portfolio-card">
-  <h3>Courses</h3>
-
-  <div class="course-scroll-wrapper">
-    <button class="scroll-button left">&#10094;</button>
-
-    <div class="course-scroll-container">
-      <!-- Courses Taken -->
-      <div class="course-card horizontal reveal slide-left">
-        <div class="project-video">
-          <video src="courses-taken-demo.mp4" controls></video>
+        <div class="portfolio-card">
+            <h3>Web Development Projects</h3>
+            <img src="web-project-thumbnail.jpg" alt="Web Project Thumbnail" class="thumbnail">
+            <h4 class="project-title">Responsive Portfolio Website</h4>
+            <p class="project-date">January 2025</p>
+            <p class="project-description">A personal portfolio site designed with HTML, CSS, and JavaScript, showcasing projects with mobile responsiveness.</p>
+            <div class="tech-icons">
+                <img src="html.svg" alt="HTML">
+                <img src="css.svg" alt="CSS">
+                <img src="Javascript.png" alt="JavaScript">
+            </div>
         </div>
-        <h4 class="project-title">Courses Taken</h4>
-        <p class="project-date">2023 – 2025</p>
-        <p class="project-description">
-          Completed advanced courses in systems modeling, machine learning, and software engineering.
-        </p>
-        <div class="tech-icons">
-          <img src="python.svg" alt="Python">
-          <img src="html.svg" alt="HTML">
-          <img src="visual-studio-code.svg" alt="VS Code">
-        </div>
-        <div class="project-links">
-          <a href="https://example-taken-course.com" target="_blank">
-            <img src="external-link-icon.svg" alt="Course Website">
-          </a>
-          <a href="https://github.com/yourusername/courses-taken" target="_blank">
-            <img src="github.svg" alt="GitHub Repo">
-          </a>
-        </div>
-      </div>
 
-      <!-- Courses Taught -->
-      <div class="course-card horizontal reveal slide-left">
-        <div class="project-video">
-          <video src="courses-taught-demo.mp4" controls></video>
+        <div class="portfolio-card">
+            <h3>Machine Learning</h3>
+            <img src="ml-project-thumbnail.jpg" alt="ML Project Thumbnail" class="thumbnail">
+            <h4 class="project-title">Image Classifier</h4>
+            <p class="project-date">October 2024</p>
+            <p class="project-description">A convolutional neural network (CNN) trained to classify images into categories using Python and TensorFlow.</p>
+            <div class="tech-icons">
+                <img src="python.svg" alt="Python">
+                <img src="tensorflow.svg" alt="TensorFlow">
+                <img src="jupyter.svg" alt="Jupyter Notebook">
+            </div>
         </div>
-        <h4 class="project-title">Courses Taught</h4>
-        <p class="project-date">2024 – Present</p>
-        <p class="project-description">
-          Instructor-led sessions on HTML, CSS, and intro to data science with project-based assessments.
-        </p>
-        <div class="tech-icons">
-          <img src="html.svg" alt="HTML">
-          <img src="css.svg" alt="CSS">
-          <img src="python.svg" alt="Python">
-        </div>
-        <div class="project-links">
-          <a href="https://example-taught-course.com" target="_blank">
-            <img src="external-link-icon.svg" alt="Course Website">
-          </a>
-          <a href="https://github.com/yourusername/courses-taught" target="_blank">
-            <img src="github.svg" alt="GitHub Repo">
-          </a>
-        </div>
-      </div>
-    </div>
 
-    <button class="scroll-button right">&#10095;</button>
-  </div>
-</div>
-</section>
-<!--Social Media Icons-->
-<footer>
-  <div class="icons">
-    <div class="icon-img-1">
-      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-        <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3">
-      </a>
-    </div>
-    <div class="icon-img-2">
-      <a href="https://github.com/jaslinpride" target="_blank">
-        <img src="github.svg" alt="GitHub" data-sound="coffee-clink.mp3">
-      </a>
-    </div>
-    <div class="icon-img-3">
-      <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
-        <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="steam.mp3">
-      </a>
-    </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; Engineering Fueled by Coffee 2025.</p>
-  </div>
-</footer>
+        <div class="portfolio-card">
+            <h3>Data Analysis</h3>
+            <img src="data-analysis-thumbnail.jpg" alt="Data Analysis Project" class="thumbnail">
+            <h4 class="project-title">NASA Meteorite Dataset</h4>
+            <p class="project-date">August 2024</p>
+            <p class="project-description">Exploratory data analysis on meteorite landings using pandas, matplotlib, and seaborn to identify global patterns.</p>
+            <div class="tech-icons">
+                <img src="python.svg" alt="Python">
+                <img src="pandas.svg" alt="Pandas">
+                <img src="matplotlib.svg" alt="Matplotlib">
+            </div>
+        </div>
+
+        <div class="portfolio-card">
+            <h3>Cloud Computing</h3>
+            <img src="cloud-computing-thumbnail.jpg" alt="Cloud Project Thumbnail" class="thumbnail">
+            <h4 class="project-title">AWS Serverless Web App</h4>
+            <p class="project-date">May 2024</p>
+            <p class="project-description">A serverless CRUD app using AWS Lambda, API Gateway, and DynamoDB to manage project submissions.</p>
+            <div class="tech-icons">
+                <img src="aws.svg" alt="AWS">
+                <img src="javascript.svg" alt="JavaScript">
+            </div>
+        </div>
+
+        <div class="portfolio-card">
+            <h3>Courses</h3>
+            <div class="course-scroll-wrapper">
+                <button class="scroll-button left">&#10094;</button>
+                <div class="course-scroll-container">
+                    <div class="course-card horizontal">
+                        <div class="project-video">
+                            <video src="courses-taken-demo.mp4" controls></video>
+                        </div>
+                        <h4 class="project-title">Courses Taken</h4>
+                        <p class="project-date">2023 – 2025</p>
+                        <p class="project-description">Completed advanced courses in systems modeling, machine learning, and software engineering.</p>
+                        <div class="tech-icons">
+                            <img src="python.svg" alt="Python">
+                            <img src="html.svg" alt="HTML">
+                            <img src="visual-studio-code.svg" alt="VS Code">
+                        </div>
+                        <div class="project-links">
+                            <a href="https://example-taken-course.com" target="_blank">
+                                <img src="external-link-icon.svg" alt="Course Website">
+                            </a>
+                            <a href="https://github.com/yourusername/courses-taken" target="_blank">
+                                <img src="github.svg" alt="GitHub Repo">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="course-card horizontal">
+                        <div class="project-video">
+                            <video src="courses-taught-demo.mp4" controls></video>
+                        </div>
+                        <h4 class="project-title">Courses Taught</h4>
+                        <p class="project-date">2024 – Present</p>
+                        <p class="project-description">Instructor-led sessions on HTML, CSS, and intro to data science with project-based assessments.</p>
+                        <div class="tech-icons">
+                            <img src="html.svg" alt="HTML">
+                            <img src="css.svg" alt="CSS">
+                            <img src="python.svg" alt="Python">
+                        </div>
+                        <div class="project-links">
+                            <a href="https://example-taught-course.com" target="_blank">
+                                <img src="external-link-icon.svg" alt="Course Website">
+                            </a>
+                            <a href="https://github.com/yourusername/courses-taught" target="_blank">
+                                <img src="github.svg" alt="GitHub Repo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-button right">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="icons">
+            <div class="icon-img-1">
+                <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+                    <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3">
+                </a>
+            </div>
+            <div class="icon-img-2">
+                <a href="https://github.com/jaslinpride" target="_blank">
+                    <img src="github.svg" alt="GitHub" data-sound="coffee-slurp.mp3">
+                </a>
+            </div>
+            <div class="icon-img-3">
+                <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+                    <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; Engineering Fueled by Coffee 2025.</p>
+        </div>
+    </footer>
     <script src="portfolio.js"></script>
 </body>
 </html>

@@ -1,3 +1,14 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-size: cover;
     background-position: center;
@@ -5,8 +16,6 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-image: url('CS.png');
-    background-size: cover;
-    background-position: center;
     background-color: #e1d1c6;
 }
 
@@ -57,19 +66,10 @@ nav .mainMenu li a:hover {
     text-align: center;
     font-size: 40px;
     color: #5C2C06;
-    background-size: cover;
-    background-position: center;
     background: #FFBCDA;
     padding: 0.7rem;
-    gap: 5%;
     width: 90%;
     margin: auto;
-    justify-content: center;
-    margin-top: 8rem;
-}
-
-.header p {
-    margin-top: 0.5rem;
 }
 
 .portfolio {
@@ -78,10 +78,6 @@ nav .mainMenu li a:hover {
     font-size: 60px;
     color: #5C2C06;
     padding: 0.5rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
     margin-top: 6rem;
     font-weight: 1000;
 }
@@ -111,12 +107,12 @@ nav .mainMenu li a:hover {
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.portfolio-card h3 {
-    font-size: 28px;
-    color: #5C2C06;
-    margin-bottom: 1rem;
+.portfolio-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .project-video video {
@@ -180,42 +176,17 @@ nav .mainMenu li a:hover {
     border-top: 2px dashed #ccc;
 }
 
-/* General hidden state */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
+.course-scroll-wrapper {
+    position: relative;
 }
 
-/* When in view */
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Slide-in from left (for courses) */
-.slide-left {
-    transform: translateX(-60px);
-}
-
-.slide-left.show {
-    transform: translateX(0);
-}
-
-/* Hover effect for cards */
-.portfolio-card:hover,
-.course-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-row {
+.course-scroll-container {
     display: flex;
-    justify-content: space-between;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
 }
 
 .course-card {
@@ -227,6 +198,11 @@ nav .mainMenu li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: scale(1.02);
 }
 
 .course-card .project-video video {
@@ -254,24 +230,15 @@ nav .mainMenu li a:hover {
     margin-bottom: 1rem;
 }
 
-.course-card .tech-icons {
+.course-card .tech-icons,
+.course-card .project-links {
     display: flex;
     gap: 1rem;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.course-card .tech-icons img {
-    width: 28px;
-    height: 28px;
-}
-
-.course-card .project-links {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
-}
-
+.course-card .tech-icons img,
 .course-card .project-links img {
     width: 28px;
     height: 28px;
@@ -281,19 +248,6 @@ nav .mainMenu li a:hover {
 .course-card .project-links img:hover {
     transform: scale(1.1);
     cursor: pointer;
-}
-
-.course-scroll-wrapper {
-    position: relative;
-}
-
-.course-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 2rem;
-    padding: 1rem 0;
-    scroll-behavior: smooth;
 }
 
 .scroll-button {
@@ -324,64 +278,6 @@ nav .mainMenu li a:hover {
     right: -10px;
 }
 
-.course-card.horizontal {
-    flex: 0 0 80%;
-    max-width: 80%;
-    scroll-snap-align: start;
-    background-color: #FFF5F8;
-    border-left: 6px solid #5C2C06;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-}
-
-.course-card.horizontal .project-video video {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 0.8rem;
-}
-
-.course-card.horizontal .project-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #5C2C06;
-    margin-bottom: 0.3rem;
-}
-
-.course-card.horizontal .project-date {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 0.8rem;
-}
-
-.course-card.horizontal .project-description {
-    font-size: 15px;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.course-card.horizontal .tech-icons,
-.course-card.horizontal .project-links {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.course-card.horizontal .tech-icons img,
-.course-card.horizontal .project-links img {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.course-card.horizontal .project-links img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
 .course-scroll-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -392,9 +288,8 @@ nav .mainMenu li a:hover {
 }
 
 @media screen and (max-width: 768px) {
-    .course-card.horizontal {
-        flex: 0 0 100%;
-        max-width: 100%;
+    .course-card {
+        width: 100%;
     }
 
     .scroll-button.left,
@@ -403,63 +298,36 @@ nav .mainMenu li a:hover {
     }
 }
 
-/* Optional: Responsive tweak for smaller screens */
-@media screen and (max-width: 768px) {
-    .course-card {
-        width: 100%;
-    }
-}
-
-.portfolio p {
-    margin-top: 0.5rem;
-}
-
 footer {
-    margin-left: 6rem;
+    margin: auto;
     padding: 0.7rem;
     margin-top: 15rem;
-    margin: auto;
-    justify-content: center;
-    gap: 5%;
-    width: 90%;
-    background-size: cover;
-    background-position: center;
     text-align: center;
     color: #5C2C06;
+    width: 90%;
 }
 
 .icons {
     margin: auto;
-    justify-content: center;
-    text-align: center;
     display: flex;
+    justify-content: center;
+    gap: 2rem;
     margin-top: 12rem;
-    font-size: 2px;
-    color: #5C2C06;
-    width: 20%;
 }
 
-.icon-img-1 img,
-.icon-img-2 img,
-.icon-img-3 img {
+.icons img {
     width: 40px;
     height: 40px;
-    margin: 0 10px;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.icon-img-1 img:hover,
-.icon-img-2 img:hover,
-.icon-img-3 img:hover {
+.icons img:hover {
     transform: scale(1.15);
 }
 
 .copyright {
-    text-align: center;
     padding: 5rem;
-    margin-top: 0.7rem;
-    color: #5C2C06;
     font-size: 16px;
 }
 
@@ -468,7 +336,6 @@ footer {
         background-color: white;
         width: 80%;
         height: 36vh;
-        gap: 0%; 
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -480,24 +347,7 @@ footer {
         opacity: 80%;
     }
 
-    .new-nav {
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-        
-    .logo p {
-        font-size: 12px;
-        margin: 0;
-        margin-left: 1rem;
-        margin-top: 0.8rem;
-    }
-
-    .openMenu {
-        display: grid;
-    }
-
-    .closeMenu {
+    .openMenu, .closeMenu {
         display: grid;
     }
 
@@ -512,27 +362,12 @@ footer {
         margin-top: 2rem;
     }
 
-    .icon-img-1 img,
-    .icon-img-2 img,
-    .icon-img-3 img {
-        width: 40px;
-        height: 40px;
-        margin: 0 10px;
-        transition: transform 0.3s ease-in-out;
-        cursor: pointer;
+    .icons {
+        flex-direction: column;
     }
-    
-    .icon-img-1 img:hover,
-    .icon-img-2 img:hover,
-    .icon-img-3 img:hover {
-        transform: scale(1.15);
-    }
-    
+
     .copyright {
-        text-align: center;
-        padding: 5rem;
-        margin-top: 0.7rem;
-        color: #5C2C06;
-        font-size: 16px;
+        font-size: 12px;
+        padding: 3rem;
     }
 }
