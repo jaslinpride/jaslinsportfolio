@@ -14,70 +14,74 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="openMenu">
-                <img src="hamburger.png" alt="No Hamburger">
-            </div>
-            <ul class="mainMenu">
-                <div class="closeMenu">
-                    <img src="close.png" alt="No Close">
-                </div>
-                <a href="home.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html">Resume</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-        </nav>
-    </div>
-<!-- Contact -->
-<div class="contact">
-    <h2 id="contact-typewriter"></h2>
+    <nav>
+      <div class="openMenu">
+        <img src="hamburger.png" alt="No Hamburger" />
+      </div>
+      <ul class="mainMenu">
+        <div class="closeMenu">
+          <img src="close.png" alt="No Close" />
+        </div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </ul>
+    </nav>
+  </div>
+    <!-- Contact Title -->
+<div class="contact reveal">
+  <h2 id="contact-typewriter"></h2>
 </div>
-    <div class="contact-text">
-        <h2>Get in touch</h2>
-        <p>Visit me, E-Mail me, or Call me at</p>
-    </div>
-    <div class="contact-location-text">
-        <h2>Location</h2>
-        <p>Washington, District of Columbia</p>
-    </div>
-    <div class="contact-email-text">
-        <h2>Email</h2>
-        <p>tpride1@alumni.jh.edu</p>
-    </div>
-    <div class="contact-call-text">
-        <h2>Call</h2>
-        <p>931-374-0349</p>
-    </div>
-</div>
+<!-- Contact Section -->
+<section class="contact-section reveal">
+  <h2 class="contact-heading">Get in touch</h2>
+  <p class="contact-subtext">Visit me, E-Mail me, or Call me at</p>
+
+  <div class="contact-cards">
+    <!-- Location Card -->
+    <a class="contact-card" href="https://www.google.com/maps/dir/?api=1&destination=Washington,+DC" target="_blank" rel="noopener noreferrer">
+      <h3>Location</h3>
+      <p>Washington, District of Columbia</p>
+    </a>
+
+    <!-- Email Card -->
+    <a class="contact-card" href="mailto:tpride1@alumni.jh.edu">
+      <h3>Email</h3>
+      <p>tpride1@alumni.jh.edu</p>
+    </a>
+
+    <!-- Call Card -->
+    <a class="contact-card" href="https://voice.google.com/u/0/calls?a=nc,%2B19313740349" target="_blank" rel="noopener noreferrer">
+      <h3>Call</h3>
+      <p>931-374-0349</p>
+    </a>
+  </div>
+</section>
+<!--Social Media Icons-->
 <footer>
-<div class="name">
-    <p>Teriana Jaslin Pride</p>
-    <p>Washington, District of Columbia</p>
-</div>
-    <div class="icons">
-        <div class="icon-img-1">
-            <a href="linkedin.com/terianajaslinpride"><img src="linkedin.svg" alt="LinkedIn"></a>
-        </div>
-        <div class="icon-img-2">
-            <a href="https://github.com/jaslinpride"><img src="github.svg" alt="GitHub"></a>
-        </div>
-        <div class="icon-img-3">
-            <a href="https://buymeacoffee.com/jaslinpride"><img src="buy-me-a-coffee-seeklogo.png" alt="BuyMeaCoffee"></a>
-        </div>
+  <div class="icons">
+    <div class="icon-img-1">
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+        <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3">
+      </a>
     </div>
-</div>
-<footer>
-    <!--Website Made By-->
-    <div class="author">
-        <p>Website made by Teriana Jaslin Pride using <img src="html.svg" alt="no-html-picture">,<img src="css.svg" alt="no-css-picture">, and <img src="Javascript.png" alt="no-js-picture"> in <img src="visual-studio-code.svg" alt="no-visual-studio-code-picture">.</p>
+    <div class="icon-img-2">
+      <a href="https://github.com/jaslinpride" target="_blank">
+        <img src="github.svg" alt="GitHub" data-sound="coffee-clink.mp3">
+      </a>
     </div>
-<!-- Copyright -->
-    <div class="copyright">
-        <p>&copy; Engineering Fueled by Coffee 2025.</p>
+    <div class="icon-img-3">
+      <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+        <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="steam.mp3">
+      </a>
     </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; Engineering Fueled by Coffee 2025.</p>
+  </div>
 </footer>
     <script src="contact.js"></script>
 </body>

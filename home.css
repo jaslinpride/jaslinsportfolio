@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,11 +16,10 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-image: url('CS.png');
-    background-size: cover;
-    background-position: center;
     background-color: #e1d1c6;
 }
 
+/* Navigation */
 nav {
     display: flex;
     margin-top: 6rem;
@@ -32,11 +32,7 @@ nav {
     font-weight: 500;
 }
 
-.openMenu {
-    display: none;
-}
-
-.closeMenu {
+.openMenu, .closeMenu {
     display: none;
 }
 
@@ -64,6 +60,7 @@ nav .mainMenu li a:hover {
     color: #5C2C06;
 }
 
+/* Animations */
 .hidden {
     opacity: 0;
     transform: scale(0.9);
@@ -75,17 +72,46 @@ nav .mainMenu li a:hover {
     transform: scale(1);
 }
 
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Title Section */
+.title-section {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.title-section h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #5C2C06;
+    transition: transform 0.3s ease-in-out;
+}
+
+.title-section h1:hover {
+    transform: scale(1.05);
+}
+
+.title-section h2 {
+    font-size: 24px;
+    color: #8B4513;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Welcome Text */
 .welcome {
     line-height: 1.6;
     text-align: center;
     font-size: 60px;
     color: #5C2C06;
     padding: 0.5rem;
-    gap: 5%;
     width: 100%;
-    margin: auto;
-    justify-content: center;
-    margin-top: 6rem;
+    margin: 6rem auto 2rem;
     font-weight: 1000;
 }
 
@@ -94,33 +120,51 @@ nav .mainMenu li a:hover {
     animation: blink 0.7s infinite;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-    
-.header {
-    line-height: 1.6;
-    text-align: center;
-    font-size: 24px;
-    color: #5C2C06;
-    padding: 0.7rem;
-    gap: 5%;
-    width: 80%;
-    margin: auto;
+/* GitHub Contributions */
+.github-calendar {
+    display: flex;
     justify-content: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    background-size: cover;
-    background-position: center;
-    background: #E79898;
-    opacity: 80%;
+    align-items: center;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    text-align: center;
 }
 
-.header p {
-    margin-top: 0.5rem;
+.github-calendar h3 {
+    color: #5C2C06;
+    font-size: 28px;
+    margin-bottom: 0.5rem;
 }
 
+.github-calendar p {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.github-calendar img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+.github-calendar .contribution-scale span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+/* Footer */
 footer {
     margin-left: 6rem;
     padding: 0.7rem;
@@ -146,41 +190,20 @@ footer {
     width: 20%;
 }
 
-.icon-img-1 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-2 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
+.icon-img-1 img,
+.icon-img-2 img,
 .icon-img-3 img {
-    width: 15%;
-    fill: #5C2C06;
-    border: #5C2C06;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.author {
-    margin-top: 6rem;
-    margin-bottom: 0.7rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 16px;
-    color: #5C2C06;
-    padding: 3rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    font-weight: 500;
-}
-
-.author img {
-    width: 2.5%
+.icon-img-1 img:hover,
+.icon-img-2 img:hover,
+.icon-img-3 img:hover {
+    transform: scale(1.15);
 }
 
 .copyright {
@@ -191,12 +214,12 @@ footer {
     font-size: 16px;
 }
 
+/* Mobile Styles */
 @media(max-width: 800px) {
     nav .mainMenu {
         background-color: white;
         width: 80%;
         height: 36vh;
-        gap: 0%; 
         flex-direction: column;
         position: fixed;
         top: 0;
@@ -213,7 +236,7 @@ footer {
         top: 0;
         z-index: 1000;
     }
-        
+
     .logo p {
         font-size: 12px;
         margin: 0;
@@ -221,11 +244,7 @@ footer {
         margin-top: 0.8rem;
     }
 
-    .openMenu {
-        display: grid;
-    }
-
-    .closeMenu {
+    .openMenu, .closeMenu {
         display: grid;
     }
 
@@ -240,41 +259,14 @@ footer {
         margin-top: 2rem;
     }
 
-    .icon-img-1 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-2 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
+    .icon-img-1 img,
+    .icon-img-2 img,
     .icon-img-3 img {
-        width: 15%;
+        width: 100%;
         fill: #5C2C06;
         border: #5C2C06;
     }
-    
-    .author {
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .author img {
-        width: 4%
-    }
-    
+
     .copyright {
         margin-top: 0.7rem;
         margin-bottom: 8rem;
