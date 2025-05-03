@@ -10,25 +10,29 @@ body {
     background-color: #e1d1c6;
 }
 
+/* Navigation */
 nav {
     display: flex;
     margin-top: 6rem;
-    width: 90%;
+    width: 70%;
     margin: auto;
+    padding: 2rem;
     justify-content: center;
+    color: #E79898;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.openMenu {
-    display: none;
-}
-
-.closeMenu {
+.openMenu, .closeMenu {
     display: none;
 }
 
 nav .mainMenu {
     display: flex;
-    gap: 5%;
+    gap: 9%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 3rem;
 }
 
 nav .mainMenu li {
@@ -37,6 +41,14 @@ nav .mainMenu li {
 
 nav .mainMenu li a {
     text-decoration: none;
+}
+
+nav .mainMenu li a:hover {
+    background-color: #ffffff;
+    opacity: 30%;
+    padding: 0.6rem;
+    transition: 2s ease-out;
+    color: #5C2C06;
 }
 
 .header {
@@ -84,70 +96,69 @@ nav .mainMenu li a {
     50% { opacity: 0; }
 }
 
-.modeling-text {
-    margin-top: 4rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    margin-top: 8rem;
-    font-size: 20px;
-    color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #E79898;
-    opacity: 80%;
-    padding: 0.7rem;
+.services-section {
+    padding: 4rem 2rem;
     text-align: center;
-}
-
-.simulation-text {
-    margin-top: 3rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    font-size: 20px;
+  }
+  
+  .services-heading {
+    font-size: 36px;
     color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #E79898;
-    opacity: 80%;
-    padding: 0.7rem;
-    text-align: center;
-}
-
-.digital-engineering-text {
-    margin-top: 3rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background-color: #FFE5EC;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  
+  .service-card h3 {
     color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #E79898;
-    opacity: 80%;
-    padding: 0.7rem;
-    text-align: center;
-}
-
-.verification-and-validation-text {
-    margin-top: 3rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    font-size: 20px;
-    color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #E79898;
-    opacity: 80%;
-    padding: 0.7rem;
-    text-align: center;
-}
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
+  
+  .service-sub {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .service-card ul {
+    text-align: left;
+    padding-left: 1rem;
+    list-style-type: disc;
+  }
+  
+  .icon-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .icon-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .service-icon {
+    width: 50px;
+    margin-bottom: 1rem;
+  }  
 
 .services p {
     margin-top: 0.5rem;
@@ -156,7 +167,7 @@ nav .mainMenu li a {
 footer {
     margin-left: 6rem;
     padding: 0.7rem;
-    margin-top: 8rem;
+    margin-top: 15rem;
     margin: auto;
     justify-content: center;
     gap: 5%;
@@ -172,47 +183,26 @@ footer {
     justify-content: center;
     text-align: center;
     display: flex;
-    margin-top: 0.7rem;
+    margin-top: 12rem;
     font-size: 2px;
     color: #5C2C06;
     width: 20%;
 }
 
-.icon-img-1 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-2 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
+.icon-img-1 img,
+.icon-img-2 img,
 .icon-img-3 img {
-    width: 15%;
-    fill: #5C2C06;
-    border: #5C2C06;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.author {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 16px;
-    color: #5C2C06;
-    padding: 3rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    font-weight: 500;
-}
-
-.author img {
-    width: 2.5%
+.icon-img-1 img:hover,
+.icon-img-2 img:hover,
+.icon-img-3 img:hover {
+    transform: scale(1.15);
 }
 
 .copyright {

@@ -10,25 +10,29 @@ body {
     background-color: #e1d1c6;
 }
 
+/* Navigation */
 nav {
     display: flex;
     margin-top: 6rem;
-    width: 90%;
+    width: 70%;
     margin: auto;
+    padding: 2rem;
     justify-content: center;
+    color: #E79898;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.openMenu {
-    display: none;
-}
-
-.closeMenu {
+.openMenu, .closeMenu {
     display: none;
 }
 
 nav .mainMenu {
     display: flex;
-    gap: 5%;
+    gap: 9%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 3rem;
 }
 
 nav .mainMenu li {
@@ -37,6 +41,14 @@ nav .mainMenu li {
 
 nav .mainMenu li a {
     text-decoration: none;
+}
+
+nav .mainMenu li a:hover {
+    background-color: #ffffff;
+    opacity: 30%;
+    padding: 0.6rem;
+    transition: 2s ease-out;
+    color: #5C2C06;
 }
 
 .header {
@@ -84,21 +96,318 @@ nav .mainMenu li a {
     50% { opacity: 0; }
 }
 
-.portfolio-text {
-    margin-top: 3rem;
-    gap: 5%;
+.portfolio-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     width: 90%;
     margin: auto;
-    justify-content: center;
-    margin-top: 8rem;
+    padding: 2rem 0;
+}
+
+.portfolio-card {
+    background-color: #FFE5EC;
+    border-left: 8px solid #5C2C06;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card h3 {
+    font-size: 28px;
+    color: #5C2C06;
+    margin-bottom: 1rem;
+}
+
+.project-video video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.project-title {
     font-size: 20px;
     color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #E79898;
-    opacity: 80%;
-    padding: 0.7rem;
-    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.project-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.tech-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tech-icons img {
+    width: 32px;
+    height: 32px;
+}
+
+.project-links {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.project-links img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-links img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.project-subsection {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #ccc;
+}
+
+/* General hidden state */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* When in view */
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in from left (for courses) */
+.slide-left {
+    transform: translateX(-60px);
+}
+
+.slide-left.show {
+    transform: translateX(0);
+}
+
+/* Hover effect for cards */
+.portfolio-card:hover,
+.course-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.course-card {
+    background-color: #FFF5F8;
+    border-left: 6px solid #5C2C06;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 48%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card .project-video video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.course-card .project-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5C2C06;
+    margin-bottom: 0.3rem;
+}
+
+.course-card .project-date {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 0.8rem;
+}
+
+.course-card .project-description {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.course-card .tech-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.course-card .tech-icons img {
+    width: 28px;
+    height: 28px;
+}
+
+.course-card .project-links {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.course-card .project-links img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.course-card .project-links img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.course-scroll-wrapper {
+    position: relative;
+}
+
+.course-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #5C2C06;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-button:hover {
+    opacity: 1;
+}
+
+.scroll-button.left {
+    left: -10px;
+}
+
+.scroll-button.right {
+    right: -10px;
+}
+
+.course-card.horizontal {
+    flex: 0 0 80%;
+    max-width: 80%;
+    scroll-snap-align: start;
+    background-color: #FFF5F8;
+    border-left: 6px solid #5C2C06;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card.horizontal .project-video video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.course-card.horizontal .project-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5C2C06;
+    margin-bottom: 0.3rem;
+}
+
+.course-card.horizontal .project-date {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 0.8rem;
+}
+
+.course-card.horizontal .project-description {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.course-card.horizontal .tech-icons,
+.course-card.horizontal .project-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.course-card.horizontal .tech-icons img,
+.course-card.horizontal .project-links img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.course-card.horizontal .project-links img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.course-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.course-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+    .course-card.horizontal {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .scroll-button.left,
+    .scroll-button.right {
+        display: none;
+    }
+}
+
+/* Optional: Responsive tweak for smaller screens */
+@media screen and (max-width: 768px) {
+    .course-card {
+        width: 100%;
+    }
 }
 
 .portfolio p {
@@ -108,7 +417,7 @@ nav .mainMenu li a {
 footer {
     margin-left: 6rem;
     padding: 0.7rem;
-    margin-top: 8rem;
+    margin-top: 15rem;
     margin: auto;
     justify-content: center;
     gap: 5%;
@@ -124,98 +433,26 @@ footer {
     justify-content: center;
     text-align: center;
     display: flex;
-    margin-top: 0.7rem;
+    margin-top: 12rem;
     font-size: 2px;
     color: #5C2C06;
     width: 20%;
 }
 
-.icon-img-1 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-2 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
+.icon-img-1 img,
+.icon-img-2 img,
 .icon-img-3 img {
-    width: 15%;
-    fill: #5C2C06;
-    border: #5C2C06;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.author {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 16px;
-    color: #5C2C06;
-    padding: 3rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    font-weight: 500;
-}
-
-.author img {
-    width: 2.5%
-}
-
-.copyright {
-    text-align: center;
-    padding: 5rem;
-    margin-top: 0.7rem;
-    color: #5C2C06;
-    font-size: 16px;
-}
-
-footer {
-    margin-left: 6rem;
-    padding: 0.7rem;
-    margin-top: 8rem;
-    margin: auto;
-    justify-content: center;
-    gap: 5%;
-    width: 90%;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: #5C2C06;
-}
-
-.icons {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    margin-top: 0.7rem;
-    font-size: 2px;
-    color: #5C2C06;
-    width: 20%;
-}
-
-.icon-img-1 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-2 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-3 img {
-    width: 15%;
-    fill: #5C2C06;
-    border: #5C2C06;
+.icon-img-1 img:hover,
+.icon-img-2 img:hover,
+.icon-img-3 img:hover {
+    transform: scale(1.15);
 }
 
 .copyright {
@@ -275,52 +512,27 @@ footer {
         margin-top: 2rem;
     }
 
-    .icon-img-1 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-2 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
+    .icon-img-1 img,
+    .icon-img-2 img,
     .icon-img-3 img {
-        width: 15%;
-        fill: #5C2C06;
-        border: #5C2C06;
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
     }
     
-    .author {
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .author img {
-        width: 4%
+    .icon-img-1 img:hover,
+    .icon-img-2 img:hover,
+    .icon-img-3 img:hover {
+        transform: scale(1.15);
     }
     
     .copyright {
-        margin-top: 0.7rem;
-        margin-bottom: 8rem;
-        line-height: 1.6;
         text-align: center;
-        font-size: 10px;
+        padding: 5rem;
+        margin-top: 0.7rem;
         color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-        justify-content: center;
+        font-size: 16px;
     }
 }

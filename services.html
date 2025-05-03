@@ -14,79 +14,103 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <div class="openMenu">
-                <img src="hamburger.png" alt="No Hamburger">
-            </div>
-            <ul class="mainMenu">
-                <div class="closeMenu">
-                    <img src="close.png" alt="No Close">
-                </div>
-                <a href="home.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html">Resume</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+      <div class="openMenu">
+        <img src="hamburger.png" alt="No Hamburger" />
+      </div>
+      <ul class="mainMenu">
+        <div class="closeMenu">
+          <img src="close.png" alt="No Close" />
+        </div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </ul>
+    </nav>
+  </div>
+<!-- Services Title -->
+<div class="services reveal">
+  <h2 id="services-typewriter"></h2>
+</div>
 <!-- Services -->
-<div class="services">
-    <h2 id="services-typewriter"></h2>
-</div>
-        <div class="modeling-text">
-            <h2>Modeling</h2>
-            <h3>Software</h3>
-            <p>MagicDraw (Cameo Plugin)</p>
-            <h3>Frameworks</h3>
-            <p>Unified Architecture Framework</p>
-            <p>DoDAF</p>
-            <p>MagicGrid</p>
-        </div>
-        <div class="simulation-text">
-            <h2>Simulation</h2>
-            <p>Systems Toolkit: Orbital Simulations</p>
-        </div>
-        <div class="digital-engineering-text">
-            <h2>Digital Engineering</h2>
-            <p>Atlassian JIRA: Task Management</p>
-            <p>Atlassian Confluence: Digital Engineering Platform</p>
-            <p>DOORS, Jama: Requirements Verification</p>
-        </div>
-        <div class="verification-and-validation-text">
-            <h2>Verification and Validation</h2>
-            <h3>CDRLs</h3>
-            <p>Statement of Work</p>
-            <p>Work Breakdown Structure</p>
-            <p>Concept of Operations</p>
-            <p>System Design Description</p>
-            <p>Inteface Control Document</p>
-            <p>Test Plan</p>
-        </div>
+<section class="services-section reveal">
+
+  <div class="services-grid">
+    <!-- Card 1: Modeling -->
+    <div class="service-card">
+      <h3>Modeling</h3>
+      <div class="service-sub">
+        <strong>Software:</strong>
+        <p>MagicDraw (Cameo Plugin)</p>
+      </div>
+      <div class="service-sub">
+        <strong>Frameworks:</strong>
+        <ul>
+          <li>Unified Architecture Framework</li>
+          <li>DoDAF</li>
+          <li>MagicGrid</li>
+        </ul>
+      </div>
     </div>
-</div>
-<div class="icons">
+
+    <!-- Card 2: Simulation -->
+    <div class="service-card">
+      <h3>Simulation</h3>
+      <img src="stk.svg" alt="STK Icon" class="service-icon" />
+      <p>Orbital Simulations using Systems Tool Kit (STK) to evaluate spacecraft trajectories and mission design.</p>
+    </div>
+
+    <!-- Card 3: Digital Engineering -->
+    <div class="service-card">
+      <h3>Digital Engineering</h3>
+      <ul class="icon-list">
+        <li><img src="jira.svg" alt="JIRA"> Atlassian JIRA: Task Management</li>
+        <li><img src="confluence.svg" alt="Confluence"> Atlassian Confluence: Digital Engineering Platform</li>
+        <li><img src="doors.svg" alt="DOORS"> DOORS: Requirements Verification</li>
+        <li><img src="jama.svg" alt="Jama"> Jama: Requirements Verification</li>
+      </ul>
+    </div>
+
+    <!-- Card 4: Verification & Validation -->
+    <div class="service-card">
+      <h3>Verification & Validation</h3>
+      <ul>
+        <li>CDRLs</li>
+        <li>Statement of Work</li>
+        <li>Work Breakdown Structure</li>
+        <li>Concept of Operations</li>
+        <li>System Design Description</li>
+        <li>Interface Control Document</li>
+        <li>Test Plan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--Social Media Icons-->
+<footer>
+  <div class="icons">
     <div class="icon-img-1">
-        <a href="linkedin.com/terianajaslinpride"><img src="linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+        <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3">
+      </a>
     </div>
     <div class="icon-img-2">
-        <a href="https://github.com/jaslinpride"><img src="github.svg" alt="GitHub"></a>
+      <a href="https://github.com/jaslinpride" target="_blank">
+        <img src="github.svg" alt="GitHub" data-sound="coffee-clink.mp3">
+      </a>
     </div>
     <div class="icon-img-3">
-        <a href="https://buymeacoffee.com/jaslinpride"><img src="buy-me-a-coffee-seeklogo.png" alt="BuyMeaCoffee"></a>
+      <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+        <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="steam.mp3">
+      </a>
     </div>
-</div>
-</div>
-<footer>
-    <!--Website Made By-->
-    <div class="author">
-        <p>Website made by Teriana Jaslin Pride using <img src="html.svg" alt="no-html-picture">,<img src="css.svg" alt="no-css-picture">, and <img src="Javascript.png" alt="no-js-picture"> in <img src="visual-studio-code.svg" alt="no-visual-studio-code-picture">.</p>
-    </div>
-<!-- Copyright -->
-    <div class="copyright">
-        <p>&copy; Engineering Fueled by Coffee 2025.</p>
-    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; Engineering Fueled by Coffee 2025.</p>
+  </div>
 </footer>
     <script src="services.js"></script>
 </body>

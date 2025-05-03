@@ -1,129 +1,149 @@
-body {
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
     background-size: cover;
     background-position: center;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     background-image: url('CS.png');
-    background-size: cover;
-    background-position: center;
     background-color: #e1d1c6;
-}
-
-nav {
+  }
+  
+  /* Navigation */
+  nav {
     display: flex;
     margin-top: 6rem;
-    width: 90%;
+    width: 70%;
     margin: auto;
+    padding: 2rem;
     justify-content: center;
-}
-
-.openMenu {
+    color: #E79898;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .openMenu, .closeMenu {
     display: none;
-}
-
-.closeMenu {
-    display: none;
-}
-
-nav .mainMenu {
+  }
+  
+  nav .mainMenu {
     display: flex;
-    gap: 5%;
-}
-
-nav .mainMenu li {
+    gap: 9%;
+    text-align: center;
+    justify-content: center;
+    margin-right: 3rem;
+  }
+  
+  nav .mainMenu li {
     list-style: none;
-}
-
-nav .mainMenu li a {
+  }
+  
+  nav .mainMenu li a {
     text-decoration: none;
-}
-
-.header {
-    margin-top: 8rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 40px;
+  }
+  
+  nav .mainMenu li a:hover {
+    background-color: #ffffff;
+    opacity: 30%;
+    padding: 0.6rem;
+    transition: 2s ease-out;
     color: #5C2C06;
-    background-size: cover;
-    background-position: center;
-    background: #FFBCDA;
-    padding: 0.7rem;
-    gap: 5%;
-    width: 90%;
-    margin: auto;
-    justify-content: center;
-    margin-top: 8rem;
-}
-
-.header p {
-    margin-top: 0.5rem;
-}
-
-.resume-title {
-    line-height: 1.6;
+  }
+  
+  /* Resume Section */
+  .resume-title {
     text-align: center;
-    font-size: 60px;
+    font-size: 48px;
+    font-weight: 800;
     color: #5C2C06;
-    padding: 0.5rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
     margin-top: 6rem;
-    font-weight: 1000;
-}
-
-#resume-typewriter::after {
+    margin-bottom: 2rem;
+  }
+  
+  #resume-typewriter::after {
     content: '|';
     animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
+  }
+  
+  @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-}
-
-.page-viewer{
-    position: relative;
-    max-width: 55%;
-    margin: auto;
-    overflow: hidden; 
+  }
+  
+  .resume-slider-container {
     display: flex;
     align-items: center;
-    background: #f0f0f0;
-    border-radius: 10px;
-    padding: 1rem;
-}
-
-.image-slider {
+    justify-content: center;
+    gap: 1rem;
+    margin: auto;
+    width: 90%;
+    max-width: 1000px;
+    background: #FFE5EC;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resume-slider {
     display: flex;
-    transition: transform 0.4s ease-in-out;
     overflow-x: auto;
     scroll-behavior: smooth;
-}
-
-.image-slider img {
-    width: 70%;
-    /*max-width: 300px;*/
-    margin: 10px;
-    border-radius: 8px;
+    gap: 2rem;
+  }
+  
+  .resume-card {
     flex-shrink: 0;
-}
-
-.res-link {
-    margin-top: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .resume-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .resume-card img {
+    max-height: 500px;
+    max-width: 350px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  
+  .arrow {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #5C2C06;
+    transition: transform 0.3s;
+  }
+  
+  .arrow:hover {
+    transform: scale(1.2);
+  }
+  
+  .resume-download {
     text-align: center;
-}
-
-.res-link img {
-    width: 5%;
-}
-
-footer {
+    margin-top: 2rem;
+  }
+  
+  .resume-download img {
+    width: 40px;
+  }
+  
+  /* Footer */
+  footer {
     margin-left: 6rem;
     padding: 0.7rem;
-    margin-top: 8rem;
+    margin-top: 10rem;
     margin: auto;
     justify-content: center;
     gap: 5%;
@@ -132,208 +152,40 @@ footer {
     background-position: center;
     text-align: center;
     color: #5C2C06;
-}
-
-.icons {
+  }
+  
+  .icons {
     margin: auto;
     justify-content: center;
     text-align: center;
     display: flex;
-    margin-top: 0.7rem;
+    margin-top: 12rem;
     font-size: 2px;
     color: #5C2C06;
     width: 20%;
-}
-
-.icon-img-1 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-2 img {
-    width: 100%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.icon-img-3 img {
-    width: 15%;
-    fill: #5C2C06;
-    border: #5C2C06;
-}
-
-.author {
-    margin-top: 6rem;
-    margin-bottom: 3rem;
-    line-height: 1.6;
-    text-align: center;
-    font-size: 16px;
-    color: #5C2C06;
-    padding: 3rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
-    font-weight: 500;
-}
-
-.author img {
-    width: 2.5%
-}
-
-.copyright {
+  }
+  
+  .icon-img-1 img,
+  .icon-img-2 img,
+  .icon-img-3 img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .icon-img-1 img:hover,
+  .icon-img-2 img:hover,
+  .icon-img-3 img:hover {
+    transform: scale(1.15);
+  }
+  
+  .copyright {
     text-align: center;
     padding: 5rem;
     margin-top: 0.7rem;
     color: #5C2C06;
     font-size: 16px;
-}
-
-@media(max-width: 800px) {
-    nav .mainMenu {
-        background-color: white;
-        width: 80%;
-        height: 36vh;
-        gap: 0%; 
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        z-index: 1;
-        gap: 6%;
-        animation: slideInFromRight 2s ease-out;
-        transition: top 1.5s ease;
-        display: none;
-        opacity: 80%;
-    }
-
-    .new-nav {
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-        
-    .logo p {
-        font-size: 12px;
-        margin: 0;
-        margin-left: 1rem;
-        margin-top: 0.8rem;
-    }
-
-    .openMenu {
-        display: grid;
-    }
-
-    .closeMenu {
-        display: grid;
-    }
-
-    .openMenu img {
-        width: 10%;
-        margin-left: 18rem;
-    }
-
-    .closeMenu img {
-        width: 5%;
-        margin-left: 6rem;
-        margin-top: 2rem;
-    }
-
-    .resume-title {
-        text-align: center;
-        width: 100%;
-        line-height: 1.5;
-        letter-spacing: 1px;
-        color: #5C2C06;
-        font-size: 16px;
-        font-weight: 2000;
-        margin-top: 24rem;
-        margin-bottom: 3rem;
-    }
-
-    .page-viewer{
-        position: relative;
-        max-width: 90%;
-        margin: auto;
-        overflow: hidden; 
-        display: flex;
-        align-items: center;
-        background: #f0f0f0;
-        border-radius: 10px;
-        padding: 1rem;
-    }
-    
-    .image-slider {
-        display: flex;
-        transition: transform 0.4s ease-in-out;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-    }
-    
-    .image-slider img {
-        width: 70%;
-        /*max-width: 300px;*/
-        margin: 10px;
-        border-radius: 8px;
-        flex-shrink: 0;
-    }
-
-    .co-link {
-        margin-top: 0.5rem;
-        text-align: center;
-        font-size: 11px;
-    }
-
-    .co-link img {
-        width: 5%;
-    }
-
-    .icon-img-1 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-2 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-3 img {
-        width: 15%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .author {
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .author img {
-        width: 4%
-    }
-    
-    .copyright {
-        margin-top: 0.7rem;
-        margin-bottom: 8rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-        justify-content: center;
-    }
-}
+  }
+  
