@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  html {
+}
+
+html {
     scroll-behavior: smooth;
-  }
-  
+}
+
 body {
     background-size: cover;
     background-position: center;
@@ -16,8 +16,6 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-image: url('CS.png');
-    background-size: cover;
-    background-position: center;
     background-color: #e1d1c6;
 }
 
@@ -72,11 +70,9 @@ nav .mainMenu li a:hover {
     background-position: center;
     background: #FFBCDA;
     padding: 0.7rem;
-    gap: 5%;
     width: 90%;
     margin: auto;
     justify-content: center;
-    margin-top: 8rem;
 }
 
 .header p {
@@ -89,10 +85,6 @@ nav .mainMenu li a:hover {
     font-size: 60px;
     color: #5C2C06;
     padding: 0.5rem;
-    gap: 5%;
-    width: 100%;
-    margin: auto;
-    justify-content: center;
     margin-top: 6rem;
     font-weight: 1000;
 }
@@ -111,59 +103,69 @@ nav .mainMenu li a:hover {
     text-align: center;
     padding: 4rem 2rem;
     margin-top: 4rem;
-  }
-  
-  .contact-heading {
+}
+
+.contact-heading {
     font-size: 36px;
     color: #5C2C06;
     margin-bottom: 0.5rem;
-  }
-  
-  .contact-subtext {
+}
+
+.contact-subtext {
     font-size: 18px;
     color: #5C2C06;
     margin-bottom: 2rem;
-  }
-  
-  .contact-cards {
+}
+
+.contact-cards {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-  }
-  
-  .contact-card {
+}
+
+.contact-card {
     background-color: #FFE5EC;
     border: 2px solid #5C2C06;
     border-radius: 12px;
     padding: 2rem;
     width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .contact-card:hover {
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: #5C2C06;
+}
+
+.contact-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .contact-card h3 {
-    font-size: 20px;
-    color: #5C2C06;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-card p {
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-  }
-  
-  .contact-card a {
-    color: inherit;
-    text-decoration: none;
-  }  
+}
 
-  footer {
+.contact-card h3,
+.contact-card p {
+    color: #5C2C06;
+    transition: color 0.3s ease;
+}
+
+/* Animated underline effect */
+.contact-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 0%;
+    height: 3px;
+    background-color: #5C2C06;
+    transition: width 0.4s ease-in-out;
+}
+
+.contact-card:hover::after {
+    width: 100%;
+}
+
+/* Footer */
+footer {
     margin-left: 6rem;
     padding: 0.7rem;
     margin-top: 15rem;
@@ -188,125 +190,34 @@ nav .mainMenu li a:hover {
     width: 20%;
 }
 
-  .icon-img-1 img,
-  .icon-img-2 img,
-  .icon-img-3 img {
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-  }
-  
-  .icon-img-1 img:hover,
-  .icon-img-2 img:hover,
-  .icon-img-3 img:hover {
-      transform: scale(1.15);
-  }
-  
-  .copyright {
-      text-align: center;
-      padding: 5rem;
-      margin-top: 0.7rem;
-      color: #5C2C06;
-      font-size: 16px;
-  }
+.icon-img-1 img,
+.icon-img-2 img,
+.icon-img-3 img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
 
+.icon-img-1 img:hover,
+.icon-img-2 img:hover,
+.icon-img-3 img:hover {
+    transform: scale(1.15);
+}
+
+.copyright {
+    text-align: center;
+    padding: 5rem;
+    margin-top: 0.7rem;
+    color: #5C2C06;
+    font-size: 16px;
+}
+
+/* Responsive */
 @media(max-width: 800px) {
     nav .mainMenu {
         background-color: white;
         width: 80%;
         height: 36vh;
-        gap: 0%; 
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        z-index: 1;
-        gap: 6%;
-        animation: slideInFromRight 2s ease-out;
-        transition: top 1.5s ease;
-        display: none;
-        opacity: 80%;
-    }
-
-    .new-nav {
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-        
-    .logo p {
-        font-size: 12px;
-        margin: 0;
-        margin-left: 1rem;
-        margin-top: 0.8rem;
-    }
-
-    .openMenu {
-        display: grid;
-    }
-
-    .closeMenu {
-        display: grid;
-    }
-
-    .openMenu img {
-        width: 10%;
-        margin-left: 18rem;
-    }
-
-    .closeMenu img {
-        width: 5%;
-        margin-left: 6rem;
-        margin-top: 2rem;
-    }
-
-    .icon-img-1 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-2 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .icon-img-3 img {
-        width: 15%;
-        fill: #5C2C06;
-        border: #5C2C06;
-    }
-    
-    .author {
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-    }
-    
-    .author img {
-        width: 4%
-    }
-    
-    .copyright {
-        margin-top: 0.7rem;
-        margin-bottom: 8rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-        justify-content: center;
-    }
-}
+        flex-direction:
