@@ -2,35 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio Website</title>
+  <title>About Me - Teriana Jaslin Pride</title>
   <link rel="stylesheet" href="about.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <div class="openMenu">
-        <img src="hamburger.png" alt="No Hamburger" />
-      </div>
-      <ul class="mainMenu">
-        <div class="closeMenu">
-          <img src="close.png" alt="No Close" />
-        </div>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </ul>
-    </nav>
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <div class="nav-toggle" id="navToggle">
+      <div class="nav-lines"></div>
+    </div>
+    <div class="nav-menu" id="navMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 
   <!-- About Me Header -->
@@ -63,22 +66,22 @@
     </div>
   </div>
 
-  <!-- Social Media Icons -->
+  <!-- Footer -->
   <footer>
     <div class="icons">
       <div class="icon-img-1">
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+        <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
           <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3" />
         </a>
       </div>
       <div class="icon-img-2">
         <a href="https://github.com/jaslinpride" target="_blank">
-          <img src="github.svg" alt="GitHub" data-sound="coffee-clink.mp3" />
+          <img src="github.svg" alt="GitHub" data-sound="coffee-slurp.mp3" />
         </a>
       </div>
       <div class="icon-img-3">
         <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
-          <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="steam.mp3" />
+          <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
         </a>
       </div>
     </div>
@@ -87,6 +90,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script src="about.js"></script>
 </body>
 </html>

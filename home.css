@@ -1,429 +1,280 @@
-/* Reset and base styles */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
+  }
+  
+  html {
     scroll-behavior: smooth;
-}
-
-body {
-    background-size: cover;
-    background-position: center;
+  }
+  
+  body {
     font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    background-image: url('CS.png');
+    background: url('CS.png') no-repeat center center fixed;
+    background-size: cover;
     background-color: #e1d1c6;
-}
-
-/* Navigation */
-nav {
+    color: #5C2C06;
+  }
+  
+  /* ------------------ NAVIGATION ------------------ */
+  
+  /* Full Nav for Desktop (visible >800px) */
+  nav.desktop-nav {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    margin-top: 6rem;
-    width: 70%;
-    margin: auto;
-    padding: 2rem;
     justify-content: center;
-    color: #E79898;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.openMenu, .closeMenu {
-    display: none;
-}
-
-nav .mainMenu {
-    display: flex;
-    gap: 9%;
-    text-align: center;
-    justify-content: center;
-    margin-right: 3rem;
-}
-
-nav .mainMenu li {
-    list-style: none;
-}
-
-nav .mainMenu li a {
+    align-items: center;
+    gap: 2rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  nav.desktop-nav a {
+    color: #5C2C06;
     text-decoration: none;
-}
-
-nav .mainMenu li a:hover {
-    background-color: #ffffff;
-    opacity: 30%;
-    padding: 0.6rem;
-    transition: 2s ease-out;
-    color: #5C2C06;
-}
-
-/* Animations */
-.hidden {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.6s ease-out;
-}
-
-.show {
-    opacity: 1;
-    transform: scale(1);
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Title Section */
-.title-section {
-    text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
-
-.title-section h1 {
-    font-size: 60px;
-    font-weight: 800;
-    color: #5C2C06;
-    transition: transform 0.3s ease-in-out;
-}
-
-.title-section h1:hover {
-    transform: scale(1.05);
-}
-
-.title-section h2 {
-    font-size: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav.desktop-nav a:hover {
+    background-color: #FFE5EC;
     color: #8B4513;
-    font-weight: 500;
-    margin-top: 0.5rem;
-    opacity: 0.9;
-}
-
-/* Welcome Text */
-.welcome {
-    line-height: 1.6;
-    text-align: center;
-    font-size: 36px;
-    color: #5C2C06;
-    padding: 0.5rem;
-    width: 100%;
-    margin: 6rem auto 2rem;
-    font-weight: 1000;
-}
-
-#typewriter-text::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-}
-
-/* GitHub Contributions */
-.github-calendar {
+  }
+  
+  /* Collapsible Mobile Nav (hidden >800px) */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+  
+  .nav-toggle {
+    width: 50px;
+    height: 50px;
+    background-color: #5C2C06;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 2rem auto;
-    width: 90%;
-    max-width: 800px;
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    text-align: center;
-}
-
-.github-calendar h3 {
-    color: #5C2C06;
-    font-size: 28px;
-    margin-bottom: 0.5rem;
-}
-
-.github-calendar p {
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.github-calendar img {
-    width: 100%;
-    max-width: 700px;
-    height: auto;
-    margin-top: 1rem;
-    border-radius: 8px;
-}
-
-.github-calendar .contribution-scale span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-}
-
-/* Footer */
-footer {
-    margin-left: 6rem;
-    padding: 0.7rem;
-    margin-top: 15rem;
-    margin: auto;
     justify-content: center;
-    gap: 5%;
-    width: 90%;
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: #5C2C06;
-}
-
-.icons {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    margin-top: 12rem;
-    font-size: 2px;
-    color: #5C2C06;
-    width: 20%;
-}
-
-.icon-img-1 img,
-.icon-img-2 img,
-.icon-img-3 img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
     cursor: pointer;
-}
-
-.icon-img-1 img:hover,
-.icon-img-2 img:hover,
-.icon-img-3 img:hover {
-    transform: scale(1.15);
-}
-
-.copyright {
-    text-align: center;
-    padding: 5rem;
-    margin-top: 0.7rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-lines {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .nav-lines::before,
+  .nav-lines::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+  }
+  
+  .nav-lines::before {
+    top: -6px;
+  }
+  
+  .nav-lines::after {
+    top: 6px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #FFE5EC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 4rem;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .nav-menu.open {
+    width: 250px;
+    height: 360px;
+    border-radius: 50% / 40%;
+    opacity: 1;
+    pointer-events: auto;
+    padding-top: 4rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-menu a {
     color: #5C2C06;
-    font-size: 16px;
-}
-
-/* Mobile Styles */
-@media(max-width: 800px) {
-    nav .mainMenu {
-        background-color: white;
-        width: 80%;
-        height: 36vh;
-        gap: 0%; 
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        z-index: 1;
-        gap: 6%;
-        animation: slideInFromRight 2s ease-out;
-        transition: top 1.5s ease;
-        display: none;
-        opacity: 80%;
-        margin-left: 2rem;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .new-nav {
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-    }
-        
-    .logo p {
-        font-size: 12px;
-        margin: 0;
-        margin-left: 1rem;
-        margin-top: 0.8rem;
-    }
-
-    .openMenu {
-        display: grid;
-    }
-
-    .closeMenu {
-        display: grid;
-    }
-
-    .openMenu img {
-        width: 10%;
-        margin-left: 18rem;
-    }
-
-    .closeMenu img {
-        width: 5%;
-        margin-left: 6rem;
-        margin-top: 2rem;
-    }
-    
-    .hidden {
-        opacity: 0;
-        transform: scale(0.9);
-        transition: all 0.6s ease-out;
-    }
-    
-    .show {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Title Section */
-.title-section {
+    text-decoration: none;
+    margin: 0.75rem 0;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  /* ------------------ TITLE & WELCOME ------------------ */
+  .title-section {
     text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
-
-.title-section h1 {
-    font-size: 36px;
-    font-weight: 800;
+    margin-top: 8rem;
+  }
+  
+  .title-section h1 {
+    font-size: 48px;
+    font-weight: 900;
     color: #5C2C06;
-    transition: transform 0.3s ease-in-out;
-}
-
-.title-section h1:hover {
-    transform: scale(1.05);
-}
-
-.title-section h2 {
-    font-size: 16px;
+  }
+  
+  .title-section h2 {
+    font-size: 20px;
     color: #8B4513;
     font-weight: 500;
     margin-top: 0.5rem;
-    opacity: 0.9;
-}
-
-/* Welcome Text */
-.welcome {
-    line-height: 1.6;
+  }
+  
+  .welcome {
     text-align: center;
-    font-size: 22px;
-    color: #5C2C06;
-    padding: 0.5rem;
-    width: 100%;
-    margin: 6rem auto 2rem;
-    font-weight: 1000;
-}
-
-#typewriter-text::after {
+    font-size: 24px;
+    margin: 4rem 1rem;
+    font-weight: 600;
+  }
+  
+  #typewriter-text::after {
     content: '|';
     animation: blink 0.7s infinite;
-}
-
-/* GitHub Contributions */
-.github-calendar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* ------------------ GITHUB SECTION ------------------ */
+  .github-calendar {
+    background: #fff;
     margin: 2rem auto;
+    padding: 1.5rem;
     width: 90%;
     max-width: 800px;
-    background: #fff;
-    padding: .5rem;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
     text-align: center;
-}
-
-.github-calendar h3 {
-    color: #5C2C06;
-    font-size: 20px;
+  }
+  
+  .github-calendar h3 {
+    font-size: 24px;
     margin-bottom: 0.5rem;
-}
-
-.github-calendar p {
+  }
+  
+  .github-calendar p {
+    font-size: 14px;
     color: #333;
-    font-size: 12px;
-    font-weight: 500;
     margin-bottom: 1rem;
-}
-
-.github-calendar img {
+  }
+  
+  .github-calendar img {
     width: 100%;
     max-width: 700px;
-    height: auto;
     margin-top: 1rem;
     border-radius: 8px;
-}
-
-.github-calendar .contribution-scale span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    font-size: 12px;
-}
-
-/* Footer */
-footer {
-    margin-left: 6rem;
-    padding: 0.7rem;
-    margin-top: 15rem;
-    margin: auto;
-    justify-content: center;
-    gap: 5%;
-    width: 90%;
-    background-size: cover;
-    background-position: center;
+  }
+  
+  /* ------------------ FOOTER ------------------ */
+  footer {
     text-align: center;
-    color: #5C2C06;
-}
-
-.icons {
-    margin: auto;
-    justify-content: center;
-    text-align: center;
+    padding: 3rem 1rem 5rem;
+  }
+  
+  .icons {
     display: flex;
-    margin-top: 12rem;
-    font-size: 2px;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .icons img:hover {
+    transform: scale(1.15);
+  }
+  
+  footer .copyright {
+    font-size: 12px;
     color: #5C2C06;
-    
-}
-
-    .icon-img-1 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
+  }
+  
+  /* ------------------ SCROLL REVEAL ------------------ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .reveal.show {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  
+  /* ------------------ RESPONSIVE ------------------ */
+  @media (max-width: 800px) {
+    nav.desktop-nav {
+      display: none;
     }
-
-    .icon-img-2 img {
-        width: 100%;
-        fill: #5C2C06;
-        border: #5C2C06;
+  
+    .mobile-nav {
+      display: block;
     }
-
-    .icon-img-3 img {
-        width: 40%;
+  
+    .title-section h1 {
+      font-size: 28px;
     }
-
-    .copyright {
-        margin-top: 0.7rem;
-        margin-bottom: 8rem;
-        line-height: 1.6;
-        text-align: center;
-        font-size: 10px;
-        color: #5C2C06;
-        padding: 3rem;
-        gap: 5%;
-        width: 100%;
-        margin: auto;
-        justify-content: center;
+  
+    .title-section h2 {
+      font-size: 16px;
     }
-}
+  
+    .welcome {
+      font-size: 20px;
+    }
+  
+    .nav-menu a {
+      font-size: 0.95rem;
+    }
+  
+    .github-calendar h3 {
+      font-size: 20px;
+    }
+  
+    .icons img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  

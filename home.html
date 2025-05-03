@@ -11,27 +11,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
-<!-- Navigation -->
-    <div class="container">
-        <nav>
-            <div class="openMenu">
-                <img src="hamburger.png" alt="Open Menu" />
-            </div>
-            <ul class="mainMenu">
-                <div class="closeMenu">
-                    <img src="close.png" alt="Close Menu" />
-                </div>
-                <a href="home.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html">Resume</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-        </nav>
-    </div>
 
-  <!-- Title Page Header -->
+  <!-- Desktop Navigation (Visible above 800px) -->
+  <nav class="desktop-nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Oval Navigation (Visible 800px and below) -->
+  <div class="mobile-nav">
+    <div class="nav-toggle" id="navToggle">
+      <div class="nav-lines"></div>
+    </div>
+    <div class="nav-menu" id="navMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <!-- Title Header -->
   <div class="title-section">
     <h1>Teriana Jaslin Pride</h1>
     <h2>Systems Engineer</h2>
@@ -43,7 +49,7 @@
   </div>
 
   <!-- GitHub Contributions Section -->
-  <div class="github-calendar">
+  <div class="github-calendar reveal">
     <h3>GitHub Contributions</h3>
     <p id="contribution-count"><strong>Loading contributions...</strong></p>
     <div id="contribution-graph">
@@ -51,31 +57,33 @@
     </div>
     <div class="contribution-scale">
       <p style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
-        Less <span style="display: inline-block; width: 20px; height: 20px; background-color: #ebedf0; margin: 0 3px; border-radius: 3px;"></span>
+        Less
+        <span style="display: inline-block; width: 20px; height: 20px; background-color: #ebedf0; margin: 0 3px; border-radius: 3px;"></span>
         <span style="display: inline-block; width: 20px; height: 20px; background-color: #c6e48b; margin: 0 3px; border-radius: 3px;"></span>
         <span style="display: inline-block; width: 20px; height: 20px; background-color: #7bc96f; margin: 0 3px; border-radius: 3px;"></span>
         <span style="display: inline-block; width: 20px; height: 20px; background-color: #239a3b; margin: 0 3px; border-radius: 3px;"></span>
-        <span style="display: inline-block; width: 20px; height: 20px; background-color: #196127; margin: 0 3px; border-radius: 3px;"></span> More
+        <span style="display: inline-block; width: 20px; height: 20px; background-color: #196127; margin: 0 3px; border-radius: 3px;"></span>
+        More
       </p>
     </div>
   </div>
 
-  <!-- Footer with Social Media Icons -->
+  <!-- Footer -->
   <footer>
     <div class="icons">
       <div class="icon-img-1">
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+        <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
           <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3" />
         </a>
       </div>
       <div class="icon-img-2">
         <a href="https://github.com/jaslinpride" target="_blank">
-          <img src="github.svg" alt="GitHub" data-sound="coffee-clink.mp3" />
+          <img src="github.svg" alt="GitHub" data-sound="coffee-slurp.mp3" />
         </a>
       </div>
       <div class="icon-img-3">
         <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
-          <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="steam.mp3" />
+          <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
         </a>
       </div>
     </div>
@@ -84,6 +92,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script src="home.js"></script>
 </body>
 </html>
