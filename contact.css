@@ -1,14 +1,13 @@
 body {
+    background-size: cover;
+    background-position: center;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     background-image: url('CS.png');
     background-size: cover;
     background-position: center;
-    background-color: #FFD6E9;
-        font-family: "Noto Sans", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: <weight>;
-        font-style: normal;
-        font-variation-settings:
-        "wdth" 100;
+    background-color: #e1d1c6;
 }
 
 nav {
@@ -62,10 +61,27 @@ nav .mainMenu li a {
 }
 
 .contact {
-    margin-top: 8rem;
+    line-height: 1.6;
     text-align: center;
-    font-size: 25px;
+    font-size: 60px;
     color: #5C2C06;
+    padding: 0.5rem;
+    gap: 5%;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 6rem;
+    font-weight: 1000;
+}
+
+#contact-typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .contact-text {
