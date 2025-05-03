@@ -2,37 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personal Portfolio Website</title>
+  <title>Contact | Teriana Jaslin Pride</title>
   <link rel="stylesheet" href="contact.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <div class="openMenu">
-        <img src="hamburger.png" alt="No Hamburger" />
-      </div>
-      <ul class="mainMenu">
-        <div class="closeMenu">
-          <img src="close.png" alt="No Close" />
-        </div>
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </ul>
-    </nav>
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <div class="nav-toggle" id="navToggle">
+      <div class="nav-lines"></div>
+    </div>
+    <div class="nav-menu" id="navMenu">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 
   <!-- Contact Title -->
-  <div class="contact">
-    <h2 id="contact-typewriter"></h2>
+  <div class="services">
+    <h2 id="services-typewriter">Contact</h2>
   </div>
 
   <!-- Contact Section -->
@@ -60,7 +65,7 @@
   <footer>
     <div class="icons">
       <div class="icon-img-1">
-        <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+        <a href="https://www.linkedin.com/in/terianajaslinpride" target="_blank">
           <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3" />
         </a>
       </div>
