@@ -1,124 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
-    <link rel="stylesheet" href="services.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio Website</title>
+  <link rel="stylesheet" href="services.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="openMenu">
-                <img src="hamburger.png" alt="Open Menu" />
-            </div>
-            <ul class="mainMenu">
-                <div class="closeMenu">
-                    <img src="close.png" alt="Close Menu" />
-                </div>
-                <a href="home.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html">Resume</a>
-                <a href="services.html">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
-            </ul>
-        </nav>
+  <div class="container">
+    <nav>
+      <div class="openMenu">
+        <img src="hamburger.png" alt="Open Menu" />
+      </div>
+      <ul class="mainMenu">
+        <div class="closeMenu">
+          <img src="close.png" alt="Close Menu" />
+        </div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Resume</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Services Title -->
+  <div class="services">
+    <h2 id="services-typewriter"></h2>
+  </div>
+
+  <!-- Services -->
+  <section class="services-section">
+    <div class="services-grid">
+      <!-- Card 1: Modeling -->
+      <div class="service-card">
+        <h3>Modeling</h3>
+        <div class="service-sub">
+          <strong>Software:</strong>
+          <p><a href="https://www.nomagic.com/products/magicdraw" target="_blank">MagicDraw (Cameo Plugin)</a></p>
+        </div>
+        <div class="service-sub">
+          <strong>Frameworks:</strong>
+          <ul>
+            <li><a href="https://www.omg.org/uaf/" target="_blank">Unified Architecture Framework</a></li>
+            <li><a href="https://acqnotes.com/acqnote/careerfields/dodaf" target="_blank">DoDAF</a></li>
+            <li><a href="https://www.nomagic.com/images/stories/pdf/Magic_Grid_White_Paper.pdf" target="_blank">MagicGrid</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: Simulation -->
+      <div class="service-card">
+        <h3>Simulation</h3>
+        <img src="AGI-2.png" alt="STK Icon" class="service-icon" />
+        <p>Orbital Simulations using <a href="https://www.agi.com/products/stk" target="_blank">Systems Tool Kit (STK)</a> to evaluate spacecraft trajectories and mission design.</p>
+      </div>
+
+      <!-- Card 3: Digital Engineering -->
+      <div class="service-card">
+        <h3>Digital Engineering</h3>
+        <ul class="icon-list">
+          <li>
+            <a href="https://www.atlassian.com/software/jira" target="JIRA Link">
+              <img src="jira.png" alt="JIRA" />
+              Atlassian JIRA: Task Management
+            </a>
+          </li>
+          <li>
+            <a href="https://www.atlassian.com/software/confluence" target="Confluence Link">
+              <img src="confluence.png" alt="Confluence" />
+              Atlassian Confluence: Digital Engineering Platform
+            </a>
+          </li>
+          <li>
+            <a href="https://www.ibm.com/products/requirements-management" target="DOORS Link">
+              <img src="ibm.svg" alt="DOORS" />
+              DOORS: Requirements Verification
+            </a>
+          </li>
+          <li>
+            <a href="https://www.jamasoftware.com/" target="Jama Link">
+              <img src="jama.png" alt="Jama" />
+              Jama: Requirements Verification
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card 4: Verification & Validation -->
+      <div class="service-card">
+        <h3>Verification & Validation</h3>
+        <ul>
+          <a href="https://acqnotes.com/acqnote/tasks/develop-the-contract-data-requirements-list" target="_blank">CDRLs</a></li>
+          <li><a href="https://acqnotes.com/acqnote/careerfields/statement-of-work-sow" target="_blank">Statement of Work</a></li>
+          <li><a href="https://acqnotes.com/acqnote/tasks/work-breakdown-structure-wbs" target="_blank">Work Breakdown Structure</a></li>
+          <li><a href="https://acqnotes.com/acqnote/careerfields/concept-of-operations-conops" target="_blank">Concept of Operations</a></li>
+          <li><a href="https://acqnotes.com/acqnote/tasks/system-design-document" target="_blank">System Design Description</a></li>
+          <li><a href="https://acqnotes.com/acqnote/tasks/interface-control-documents" target="_blank">Interface Control Document</a></li>
+          <li><a href="https://acqnotes.com/acqnote/tasks/develop-a-test-and-evaluation-master-plan-temp" target="_blank">Test Plan</a></li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <!-- Services Title -->
-    <div class="services">
-        <h2 id="services-typewriter"></h2>
+  <!-- Social Media Icons -->
+  <footer>
+    <div class="icons">
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
+        <img src="linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/jaslinpride" target="_blank">
+        <img src="github.svg" alt="GitHub" />
+      </a>
+      <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+        <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" />
+      </a>
     </div>
+    <div class="copyright">
+      <p>&copy; Engineering Fueled by Coffee 2025.</p>
+    </div>
+  </footer>
 
-    <!-- Services -->
-    <section class="services-section">
-        <div class="services-grid">
-            <!-- Card 1: Modeling -->
-            <div class="service-card">
-                <h3>Modeling</h3>
-                <div class="service-sub">
-                    <strong>Software:</strong>
-                    <p>MagicDraw (Cameo Plugin)</p>
-                </div>
-                <div class="service-sub">
-                    <strong>Frameworks:</strong>
-                    <ul>
-                        <li>Unified Architecture Framework</li>
-                        <li>DoDAF</li>
-                        <li>MagicGrid</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 2: Simulation -->
-            <div class="service-card">
-                <h3>Simulation</h3>
-                <img src="AGI-2.png" alt="STK Icon" class="service-icon" />
-                <p>Orbital Simulations using Systems Tool Kit (STK) to evaluate spacecraft trajectories and mission design.</p>
-            </div>
-
-            <!-- Card 3: Digital Engineering -->
-            <div class="service-card">
-                <h3>Digital Engineering</h3>
-                <ul class="icon-list-1">
-                    <li><img src="jira.png" alt="JIRA"> Atlassian JIRA: Task Management</li>
-                </ul>
-                <ul class="icon-list-2">
-                    <li><img src="confluence.png" alt="Confluence"> Atlassian Confluence: Digital Engineering Platform</li>
-                </ul>
-                <ul class="icon-list-3">
-                    <li><img src="ibm.svg" alt="DOORS"> DOORS: Requirements Verification</li>
-                </ul>
-                <ul class="icon-list-4">
-                    <li><img src="jama.png" alt="Jama"> Jama: Requirements Verification</li>
-                </ul>
-            </div>
-
-            <!-- Card 4: Verification & Validation -->
-            <div class="service-card">
-                <h3>Verification & Validation</h3>
-                <ul>
-                    <li>CDRLs</li>
-                    <li>Statement of Work</li>
-                    <li>Work Breakdown Structure</li>
-                    <li>Concept of Operations</li>
-                    <li>System Design Description</li>
-                    <li>Interface Control Document</li>
-                    <li>Test Plan</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Media Icons -->
-    <footer>
-        <div class="icons">
-            <div class="icon-img-1">
-                <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank">
-                    <img src="linkedin.svg" alt="LinkedIn" data-sound="coffee-pour.mp3">
-                </a>
-            </div>
-            <div class="icon-img-2">
-                <a href="https://github.com/jaslinpride" target="_blank">
-                    <img src="github.svg" alt="GitHub" data-sound="coffee-slurp.mp3">
-                </a>
-            </div>
-            <div class="icon-img-3">
-                <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
-                    <img src="buy-me-a-coffee-seeklogo.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3">
-                </a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; Engineering Fueled by Coffee 2025.</p>
-        </div>
-    </footer>
-
-    <script src="services.js"></script>
+  <script src="services.js"></script>
 </body>
 </html>
+
