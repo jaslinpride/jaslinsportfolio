@@ -204,7 +204,8 @@
   }
   
   .project-video video {
-    width: 100%;
+    width: 80%;
+    justify-content: center;
     border-radius: 10px;
     margin-bottom: 1rem;
   }
