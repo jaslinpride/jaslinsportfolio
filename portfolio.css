@@ -453,6 +453,14 @@
     .nav-menu a {
       font-size: 0.95rem;
     }
+
+    .tech-icons {
+      font-size: 12px;
+    }
+
+    .project-links {
+      font-size: 12px;
+    }
   
     .icons img {
       width: 28px;
