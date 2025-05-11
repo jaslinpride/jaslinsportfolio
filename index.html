@@ -2,244 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AstraLux Sidera I | Digital Engineering Platform</title>
+  <title>Personal Portfolio Website</title>
   <link rel="stylesheet" href="index.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap');
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <div class="menu-toggle" id="menu-toggle">
-        <img src="hamburger.png" alt="Menu" id="hamburger-icon" />
-        <img src="close.png" alt="Close" id="close-icon" style="display: none;" />
-      </div>
-      <div class="mainMenu" id="mainMenu">
-        <a href="home.html">Home</a>
-        <a href="programmanagement.html">Program Management</a>
-        <a href="conceptandcapability.html">Concept & Capability</a>
-        <a href="testandevaluation.html">Test & Evaluation</a>
-        <a href="vendorconfigurations.html">Vendor Configurations</a>
-        <a href="administrativeconcerns.html">Administrative Concerns</a>
-      </div>
-    </nav>
 
-    <!-- Welcome Section -->
-    <div class="welcomimg" id="welcome">
-      <div class="welcome">
-        <div class="welcome-text">
-          <h2>AstraLux <i>Sidera I</i></h2>
-        </div>
-        <div class="header">
-          <p>
-            Welcome to the AstraLux <i>Sidera I</i> Spacecraft and <i>STRIKE</i>
-            Enterprise Software Digital Engineering Platform. <br />
-            This platform provides comprehensive documentation on models,
-            requirements, and various systems engineering processes essential
-            for successful program execution.
-          </p>
-        </div>
-      </div>
+  <!-- Desktop Navigation (Visible above 800px) -->
+  <nav class="desktop-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile Oval Navigation (Visible 800px and below) -->
+  <div class="mobile-nav">
+    <div class="nav-toggle" id="navToggle">
+      <div class="nav-lines"></div>
     </div>
-
-    <!-- Down Arrow -->
-    <div class="down-arrow">
-      <a href="#toc"><img src="Down Arrow.png" alt="Down Arrow" /></a>
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Resume</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
     </div>
-
-    <!-- Table of Contents -->
-    <section class="hidden">
-      <div class="tocimg" id="toc">
-        <div class="tableofcontents-title">
-          <h2>Table of Contents</h2>
-        </div>
-        <div class="toc">
-          <!-- Program Management -->
-          <div class="tableofcontents-intro-title">
-            <ul>
-              <h3><a href="programmanagement.html">Program Management</a></h3>
-            </ul>
-          </div>
-          <div class="tableofcontents-intro-text">
-            <i>This section covers the processes and practices involved in planning, executing, and overseeing projects to ensure they meet objectives and stay on track.</i>
-          </div> 
-          <div class="tableofcontents-kt-title">
-            <h4>Key Topics</h4>
-          </div>
-          <div class="tableofcontents-kt-text">
-            <ul>
-              <li>Project Planning and Scheduling</li>
-              <li>Resource Allocation</li>
-              <li>Risk Management</li>
-              <li>Stakeholder Communication</li>
-            </ul>
-          </div>
-          <div class="tableofcontents-bt-title">
-            <h4>Benefitting Titles</h4>
-          </div>
-          <div class="tableofcontents-bt-text">
-            <ul>
-              <li>Program Managers</li>
-              <li>Project Managers</li>
-              <li>Portfolio Managers</li>
-              <li>Resource Managers</li>
-              <li>Risk Managers</li>
-              <li>Stakeholder Engagement Leads</li>
-            </ul>
-          </div>
-
-          <!-- Concept and Capability -->
-          <div class="tableofcontents-intro-title">
-            <ul>
-              <h3><a href="conceptandcapability.html">Concept and Capability</a></h3>
-            </ul>
-          </div>
-          <div class="tableofcontents-intro-text">
-            <i>This section details the early-stage activities in defining and refining the project concept, ensuring it aligns with goals and technical feasibility.</i>
-          </div>  
-          <div class="tableofcontents-kt-title">
-            <h4>Key Topics</h4>
-          </div>
-          <div class="tableofcontents-kt-text">
-            <ul>
-              <li>Initial Requirements Analysis</li>
-              <li>Feasibility Studies</li>
-              <li>System Architecture Design</li>
-              <li>Concept Validation</li>
-            </ul>
-          </div>
-          <div class="tableofcontents-bt-title">
-            <h4>Benefitting Titles</h4>
-          </div>
-          <div class="tableofcontents-bt-text">
-            <ul>
-              <li>Systems Engineers</li>
-              <li>Concept Development Leads</li>
-              <li>Product Managers</li>
-              <li>Technical Architects</li>
-              <li>Requirements Analysts</li>
-              <li>Innovation Research Leads</li>
-            </ul>
-          </div>
-
-          <!-- Test and Evaluation -->
-          <div class="tableofcontents-intro-title">
-            <ul>
-              <h3><a href="testandevaluation.html">Test and Evaluation</a></h3>
-            </ul>
-          </div>
-          <div class="tableofcontents-intro-text">
-            <i>This section focuses on the strategies and methods used to assess system performance, functionality, and compliance with specified requirements through testing and evaluation processes.</i>
-          </div>
-          <div class="tableofcontents-kt-title">
-            <h4>Key Terms</h4>
-          </div>
-          <div class="tableofcontents-kt-text">
-            <ul>
-              <li>Test Planning and Procedures</li>
-              <li>Performance Assessment</li>
-              <li>System Verification and Validation</li>
-              <li>Reporting and Documentation</li>
-            </ul>
-          </div>
-          <div class="tableofcontents-bt-title">
-            <h4>Benefitting Titles</h4>
-          </div>
-          <div class="tableofcontents-bt-text">
-            <ul>
-              <li>Test Engineers</li>
-              <li>Quality Assurance Managers</li>
-              <li>Verification and Validation Engineers</li>
-              <li>Performance Engineers</li>
-              <li>Compliance Managers</li>
-              <li>Systems Integrators</li>
-            </ul>
-          </div>
-
-          <!-- Vendor Configurations -->
-          <div class="tableofcontents-intro-title">
-            <ul>
-              <h3><a href="vendorconfigurations.html">Vendor Configurations</a></h3>
-            </ul>
-          </div>
-          <div class="tableofcontents-intro-text">
-            <i>This section provides guidelines for managing vendor configurations, ensuring that all external components are properly specified, sourced, and integrated into the system.</i>
-          </div>
-          <div class="tableofcontents-kt-title">
-            <h4>Key Terms</h4>
-          </div>
-          <div class="tableofcontents-kt-text">
-            <ul>
-              <li>Vendor Selection Criteria</li>
-              <li>Configuration Management</li>
-              <li>Integration and Compatibility Testing</li>
-              <li>Procurement and Documentation</li>
-            </ul>
-          </div>
-          <div class="tableofcontents-bt-title">
-            <h4>Benefitting Titles</h4>
-          </div>
-          <div class="tableofcontents-bt-text">
-            <ul>
-              <li>Procurement Managers</li> 
-              <li>Vendor Relations Managers</li>
-              <li>Configuration Managers</li>
-              <li>Supply Chain Managers</li>
-              <li>Integration Engineers</li>
-              <li>Quality Control Managers</li>
-            </ul>
-          </div>
-
-          <!-- Administrative Concerns --> 
-          <div class="tableofcontents-intro-title">
-            <ul>
-              <h3><a href="administrativeconcerns.html">Administrative Concerns</a></h3>
-            </ul>
-          </div>
-          <div class="tableofcontents-intro-text">
-            <i>This section includes administrative processes that support overall project management and operational efficiency.</i>
-          </div>
-          <div class="tableofcontents-kt-title">
-            <h4>Key Topics</h4>
-          </div>
-          <div class="tableofcontents-kt-text">
-            <ul>
-              <li>Document Management</li>
-              <li>Compliance and Regulatory Requirements</li>
-              <li>Budget and Financial Tracking</li>
-              <li>Meeting and Communication Protocols</li>
-            </ul>
-          </div>
-          <div class="tableofcontents-bt-title">
-            <h4>Benefitting Titles</h4>
-          </div>
-          <div class="tableofcontents-bt-text">
-            <ul>
-              <li>Administrative Managers</li>
-              <li>Compliance Officers</li>
-              <li>Financial Analysts</li>
-              <li>Documentation Specialists</li>
-              <li>Program Support Staff</li>
-              <li>Operations Managers</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="up-arrow">
-        <a href="#welcome"><img src="Up Arrow.png" alt="Up Arrow" /></a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="copyright">
-        <p>&copy; AstraLux 2025</p>
-      </div>
-    </footer>
   </div>
 
+  <!-- Title Header -->
+  <div class="title-section">
+    <h1>Teriana Jaslin Pride</h1>
+    <h2>Systems Engineer</h2>
+  </div>
+
+  <!-- Welcome Message -->
+  <div class="welcome">
+    <h3 id="typewriter-text"></h3>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="icons">
+      <div class="icon-img-1">
+        <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
+          <img src="LinkedIn Groovy.png" alt="LinkedIn" data-sound="coffee-pour.mp3" />
+        </a>
+      </div>
+      <div class="icon-img-2">
+        <a href="https://github.com/jaslinpride" target="_blank">
+          <img src="GitHub Groovy.png" alt="GitHub" data-sound="coffee-slurp.mp3" />
+        </a>
+      </div>
+      <div class="icon-img-3">
+        <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+          <img src="BuyMeACoffee Groovy.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; Engineering Fueled by Coffee 2025.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
   <script src="index.js"></script>
 </body>
 </html>

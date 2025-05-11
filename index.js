@@ -1,59 +1,58 @@
-// index.js
-
-const menuToggle = document.getElementById("menu-toggle");
-const mainMenu = document.getElementById("mainMenu");
-const hamburgerIcon = document.getElementById("hamburger-icon");
-const closeIcon = document.getElementById("close-icon");
-
-mainMenu.classList.add("menu-transition");
-
-let isOpen = false;
-
-function openMenu() {
-  mainMenu.classList.add("menu-visible");
-  mainMenu.style.top = "0";
-  hamburgerIcon.style.display = "none";
-  closeIcon.style.display = "block";
-  isOpen = true;
-}
-
-function closeMenu() {
-  mainMenu.style.top = "-100%";
-  mainMenu.classList.remove("menu-visible");
-  hamburgerIcon.style.display = "block";
-  closeIcon.style.display = "none";
-  isOpen = false;
-}
-
-menuToggle.addEventListener("click", () => {
-  if (window.innerWidth <= 800) {
-    isOpen ? closeMenu() : openMenu();
-  }
-});
-
-document.addEventListener("click", (e) => {
-  if (
-    window.innerWidth <= 800 &&
-    isOpen &&
-    !mainMenu.contains(e.target) &&
-    !menuToggle.contains(e.target)
-  ) {
-    closeMenu();
-  }
-});
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 800) {
-    mainMenu.style.top = "0";
-    hamburgerIcon.style.display = "none";
-    closeIcon.style.display = "none";
-    isOpen = false;
-  } else {
-    if (!mainMenu.classList.contains("menu-visible")) {
-      mainMenu.style.top = "-100%";
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Typewriter Effect
+    const text = "Creativity brewed, portfolio refined.";
+    const element = document.getElementById("typewriter-text");
+    let index = 0;
+  
+    function typeWriter() {
+      if (index < text.length) {
+        element.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 100);
+      }
     }
-    hamburgerIcon.style.display = "block";
-    closeIcon.style.display = "none";
-    isOpen = false;
-  }
-});
+  
+    typeWriter();
+  
+    // 2. Coffee Sound Effects on Hover
+    const iconImages = document.querySelectorAll(".icons img");
+  
+    iconImages.forEach((img) => {
+      const soundFile = img.getAttribute("data-sound");
+      if (soundFile) {
+        const audio = new Audio(soundFile);
+        img.addEventListener("mouseenter", () => {
+          audio.currentTime = 0;
+          audio.play();
+        });
+      }
+    });
+  
+    // 3. Scroll Reveal Animation
+    const revealElements = document.querySelectorAll(".reveal");
+  
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+  
+    revealElements.forEach((el) => observer.observe(el));
+  
+    // 4. Mobile Oval Menu Toggle
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+  
+    if (navToggle && navMenu) {
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+    }
+  });
+  
