@@ -4,15 +4,224 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Teriana Jaslin Pride</title>
-  <link rel="stylesheet" href="services.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: url('CS.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #e1d1c6;
+      color: #5C2C06;
+      line-height: 1.6;
+    }
+    nav.desktop-nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+      z-index: 1000;
+    }
+    nav.desktop-nav a {
+      color: #5C2C06;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav.desktop-nav a:hover {
+      background-color: #FFE5EC;
+      color: #8B4513;
+    }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+    }
+    .nav-toggle {
+      width: 50px;
+      height: 50px;
+      background-color: #5C2C06;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .nav-lines {
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      position: relative;
+    }
+    .nav-lines::before,
+    .nav-lines::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+    }
+    .nav-lines::before { top: -6px; }
+    .nav-lines::after { top: 6px; }
+    .nav-menu {
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: #FFE5EC;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding-top: 4rem;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .nav-menu.open {
+      width: 250px;
+      height: 360px;
+      border-radius: 50% / 40%;
+      opacity: 1;
+      pointer-events: auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .nav-menu a {
+      color: #5C2C06;
+      text-decoration: none;
+      margin: 0.75rem 0;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .services {
+      text-align: center;
+      font-size: 60px;
+      padding: 0.5rem;
+      margin-top: 6rem;
+      font-weight: 1000;
+    }
+    #services-typewriter::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .services-section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background-color: #FFE5EC;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+    .service-sub {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .service-card ul {
+      text-align: left;
+      padding-left: 1rem;
+      list-style-type: disc;
+    }
+    .service-card a {
+      color: #5C2C06;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .service-card a:hover {
+      color: #A94438;
+      text-decoration: underline;
+    }
+    .icon-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .icon-list img {
+      width: 50px;
+      height: 50px;
+    }
+    .service-icon {
+      width: 40px;
+      margin-bottom: 1rem;
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .icons img {
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    .icons img:hover {
+      transform: scale(1.15);
+    }
+    .copyright {
+      padding: 2rem 1rem;
+      font-size: 14px;
+    }
+    @media (max-width: 800px) {
+      nav.desktop-nav { display: none; }
+      .mobile-nav { display: block; }
+      .services-grid { grid-template-columns: 1fr; }
+      .services { font-size: 36px; }
+      .icons img { width: 24px; height: 24px; }
+      .nav-menu a { font-size: 0.95rem; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Desktop Navigation (Visible above 800px) -->
   <nav class="desktop-nav">
-    <a href="index.html">Home</a>
+    <a href="home.html">Home</a>
     <a href="about.html">About</a>
     <a href="resume.html">Resume</a>
     <a href="services.html">Services</a>
@@ -20,13 +229,12 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Mobile Oval Navigation (Visible 800px and below) -->
   <div class="mobile-nav">
     <div class="nav-toggle" id="navToggle">
       <div class="nav-lines"></div>
     </div>
     <div class="nav-menu" id="navMenu">
-      <a href="index.html">Home</a>
+      <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="services.html">Services</a>
@@ -35,12 +243,10 @@
     </div>
   </div>
 
-  <!-- Services Title -->
   <div class="services">
     <h2 id="services-typewriter"></h2>
   </div>
 
-  <!-- Services Section -->
   <section class="services-section">
     <div class="services-grid">
       <div class="service-card">
@@ -58,27 +264,24 @@
           </ul>
         </div>
       </div>
-
       <div class="service-card">
         <h3>Simulation</h3>
         <img src="AGI-2.png" alt="STK Icon" class="service-icon" />
-        <p>Orbital Simulations using <a href="https://www.agi.com/products/stk" target="_blank">Systems Tool Kit (STK)</a> to evaluate spacecraft trajectories and mission design..</p>
+        <p>Orbital Simulations using <a href="https://www.agi.com/products/stk" target="_blank">Systems Tool Kit (STK)</a> to evaluate spacecraft trajectories and mission design.</p>
       </div>
-
       <div class="service-card">
         <h3>Digital Engineering</h3>
         <ul class="icon-list">
-          <li><a href="https://www.atlassian.com/software/jira" target="_blank"><img src="jira.png" alt="JIRA" /> Atlassian JIRA: Task Management</a></li>
-          <li><a href="https://www.atlassian.com/software/confluence" target="_blank"><img src="confluence.png" alt="Confluence" /> Atlassian Confluence: Digital Engineering Platform</a></li>
-          <li><a href="https://www.ibm.com/products/requirements-management" target="_blank"><img src="ibm.svg" alt="DOORS" /> DOORS: Requirements Verification</a></li>
-          <li><a href="https://www.jamasoftware.com/" target="_blank"><img src="jama.png" alt="Jama" /> Jama: Requirements Verification</a></li>
+          <li><a href="https://www.atlassian.com/software/jira" target="_blank"><img src="jira.png" alt="JIRA" /> Atlassian JIRA</a></li>
+          <li><a href="https://www.atlassian.com/software/confluence" target="_blank"><img src="confluence.png" alt="Confluence" /> Confluence</a></li>
+          <li><a href="https://www.ibm.com/products/requirements-management" target="_blank"><img src="ibm.svg" alt="DOORS" /> DOORS</a></li>
+          <li><a href="https://www.jamasoftware.com/" target="_blank"><img src="jama.png" alt="Jama" /> Jama</a></li>
         </ul>
       </div>
-
       <div class="service-card">
         <h3>Verification & Validation</h3>
         <ul>
-          <a href="https://acqnotes.com/acqnote/tasks/develop-the-contract-data-requirements-list" target="_blank">CDRLs</a>
+          <li><a href="https://acqnotes.com/acqnote/tasks/develop-the-contract-data-requirements-list" target="_blank">CDRLs</a></li>
           <li><a href="https://acqnotes.com/acqnote/careerfields/statement-of-work-sow" target="_blank">Statement of Work</a></li>
           <li><a href="https://acqnotes.com/acqnote/tasks/work-breakdown-structure-wbs" target="_blank">Work Breakdown Structure</a></li>
           <li><a href="https://acqnotes.com/acqnote/careerfields/concept-of-operations-conops" target="_blank">Concept of Operations</a></li>
@@ -87,7 +290,6 @@
           <li><a href="https://acqnotes.com/acqnote/tasks/develop-a-test-and-evaluation-master-plan-temp" target="_blank">Test Plan</a></li>
         </ul>
       </div>
-
       <div class="service-card">
         <h3>Frontend & Backend Development</h3>
         <ul>
@@ -101,30 +303,55 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="icons">
-      <div class="icon-img-1">
-        <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
-          <img src="LinkedIn Groovy.png" alt="LinkedIn" data-sound="coffee-pour.mp3" />
-        </a>
-      </div>
-      <div class="icon-img-2">
-        <a href="https://github.com/jaslinpride" target="_blank">
-          <img src="GitHub Groovy.png" alt="GitHub" data-sound="coffee-slurp.mp3" />
-        </a>
-      </div>
-      <div class="icon-img-3">
-        <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
-          <img src="BuyMeACoffee Groovy.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
-        </a>
-      </div>
+      <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
+        <img src="LinkedIn Groovy.png" alt="LinkedIn" data-sound="coffee-pour.mp3" />
+      </a>
+      <a href="https://github.com/jaslinpride" target="_blank">
+        <img src="GitHub Groovy.png" alt="GitHub" data-sound="coffee-slurp.mp3" />
+      </a>
+      <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+        <img src="BuyMeACoffee Groovy.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
+      </a>
     </div>
     <div class="copyright">
       <p>&copy; Engineering Fueled by Coffee 2025.</p>
     </div>
   </footer>
 
-  <script src="services.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const text = "Services";
+      const element = document.getElementById("services-typewriter");
+      let index = 0;
+      function typeWriter() {
+        if (element && index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 120);
+        }
+      }
+      typeWriter();
+      const iconImages = document.querySelectorAll(".icons img");
+      iconImages.forEach(img => {
+        const soundFile = img.getAttribute("data-sound");
+        if (soundFile) {
+          const audio = new Audio(soundFile);
+          img.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+        }
+      });
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("open");
+        });
+      }
+    });
+  </script>
 </body>
 </html>

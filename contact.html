@@ -4,29 +4,221 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Teriana Jaslin Pride</title>
-  <link rel="stylesheet" href="contact.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: url('CS.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #e1d1c6;
+      color: #5C2C06;
+      line-height: 1.6;
+    }
+    nav.desktop-nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2rem;
+      z-index: 1000;
+    }
+    nav.desktop-nav a {
+      color: #5C2C06;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav.desktop-nav a:hover {
+      background-color: #FFE5EC;
+      color: #8B4513;
+    }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+    }
+    .nav-toggle {
+      width: 50px;
+      height: 50px;
+      background-color: #5C2C06;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .nav-lines {
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      position: relative;
+    }
+    .nav-lines::before,
+    .nav-lines::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+    }
+    .nav-lines::before { top: -6px; }
+    .nav-lines::after { top: 6px; }
+    .nav-menu {
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: #FFE5EC;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding-top: 4rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s ease-in-out;
+    }
+    .nav-menu.open {
+      width: 250px;
+      height: 360px;
+      border-radius: 50% / 40%;
+      opacity: 1;
+      pointer-events: auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .nav-menu a {
+      color: #5C2C06;
+      text-decoration: none;
+      margin: 0.75rem 0;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .services {
+      text-align: center;
+      font-size: 60px;
+      color: #5C2C06;
+      padding: 0.5rem;
+      margin-top: 6rem;
+      font-weight: 1000;
+    }
+    #services-typewriter::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .contact-section {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .contact-heading {
+      font-size: 36px;
+      margin-bottom: 0.5rem;
+    }
+    .contact-subtext {
+      font-size: 18px;
+      margin-bottom: 2rem;
+    }
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-card {
+      background-color: #FFE5EC;
+      border: 2px solid #5C2C06;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: #5C2C06;
+      position: relative;
+    }
+    .contact-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    .contact-card::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      width: 0%;
+      height: 3px;
+      background-color: #5C2C06;
+      transition: width 0.4s ease-in-out;
+    }
+    .contact-card:hover::after {
+      width: 100%;
+    }
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    .icons img {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    .icons img:hover {
+      transform: scale(1.15);
+    }
+    .copyright {
+      padding: 2rem 1rem;
+      font-size: 14px;
+    }
+    @media (max-width: 800px) {
+      nav.desktop-nav { display: none; }
+      .mobile-nav { display: block; }
+      .services { font-size: 36px; }
+      .contact-card { width: 90%; }
+      .icons img { width: 24px; height: 24px; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Desktop Navigation (Visible above 800px) -->
+  <!-- Navigation -->
   <nav class="desktop-nav">
-    <a href="index.html">Home</a>
+    <a href="home.html">Home</a>
     <a href="about.html">About</a>
     <a href="resume.html">Resume</a>
     <a href="services.html">Services</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
-
-  <!-- Mobile Oval Navigation (Visible 800px and below) -->
   <div class="mobile-nav">
     <div class="nav-toggle" id="navToggle">
       <div class="nav-lines"></div>
     </div>
     <div class="nav-menu" id="navMenu">
-      <a href="index.html">Home</a>
+      <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="services.html">Services</a>
@@ -40,13 +232,12 @@
     <h2 id="services-typewriter">Contact</h2>
   </div>
 
-  <!-- Contact Section -->
+  <!-- Contact Content -->
   <section class="contact-section">
     <h2 class="contact-heading">Get in touch</h2>
     <p class="contact-subtext">Visit me, E-Mail me, or Call me at</p>
-
     <div class="contact-cards">
-      <a class="contact-card underline" href="https://www.google.com/maps/dir/?api=1&destination=Washington,+DC" target="_blank" rel="noopener noreferrer">
+      <a class="contact-card underline" href="https://www.google.com/maps/dir/?api=1&destination=Washington,+DC" target="_blank">
         <h3>Location</h3>
         <p>Washington, District of Columbia</p>
       </a>
@@ -54,7 +245,7 @@
         <h3>Email</h3>
         <p>tpride1@alumni.jh.edu</p>
       </a>
-      <a class="contact-card underline" href="https://voice.google.com/u/0/calls?a=nc,%2B19313740349" target="_blank" rel="noopener noreferrer">
+      <a class="contact-card underline" href="https://voice.google.com/u/0/calls?a=nc,%2B19313740349" target="_blank">
         <h3>Call</h3>
         <p>931-374-0349</p>
       </a>
@@ -64,27 +255,56 @@
   <!-- Footer -->
   <footer>
     <div class="icons">
-      <div class="icon-img-1">
-        <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
-          <img src="LinkedIn Groovy.png" alt="LinkedIn" data-sound="coffee-pour.mp3" />
-        </a>
-      </div>
-      <div class="icon-img-2">
-        <a href="https://github.com/jaslinpride" target="_blank">
-          <img src="GitHub Groovy.png" alt="GitHub" data-sound="coffee-slurp.mp3" />
-        </a>
-      </div>
-      <div class="icon-img-3">
-        <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
-          <img src="BuyMeACoffee Groovy.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
-        </a>
-      </div>
+      <a href="https://www.linkedin.com/in/teriana-pride" target="_blank">
+        <img src="LinkedIn Groovy.png" alt="LinkedIn" data-sound="coffee-pour.mp3" />
+      </a>
+      <a href="https://github.com/jaslinpride" target="_blank">
+        <img src="GitHub Groovy.png" alt="GitHub" data-sound="coffee-slurp.mp3" />
+      </a>
+      <a href="https://buymeacoffee.com/jaslinpride" target="_blank">
+        <img src="BuyMeACoffee Groovy.png" alt="Buy Me a Coffee" data-sound="coffee-steam.mp3" />
+      </a>
     </div>
     <div class="copyright">
       <p>&copy; Engineering Fueled by Coffee 2025.</p>
     </div>
   </footer>
 
-  <script src="contact.js"></script>
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const text = "Contact";
+      const element = document.getElementById("services-typewriter");
+      let index = 0;
+      function typeWriter() {
+        if (element && index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 120);
+        }
+      }
+      typeWriter();
+
+      const iconImages = document.querySelectorAll(".icons img");
+      iconImages.forEach(img => {
+        const soundFile = img.getAttribute("data-sound");
+        if (soundFile) {
+          const audio = new Audio(soundFile);
+          img.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+        }
+      });
+
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("open");
+        });
+      }
+    });
+  </script>
 </body>
 </html>

@@ -1,18 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio | Teriana Jaslin Pride</title>
-  <link rel="stylesheet" href="portfolio.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet"/>
+  <style>
+    /* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    background: url('CS.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #e1d1c6;
+    color: #5C2C06;
+  }
+  
+  /* Navigation */
+  nav.desktop-nav {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+  nav.desktop-nav a {
+    color: #5C2C06;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav.desktop-nav a:hover {
+    background-color: #FFE5EC;
+    color: #8B4513;
+  }
+  
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 999;
+  }
+  
+  .nav-toggle {
+    width: 50px;
+    height: 50px;
+    background-color: #5C2C06;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-lines {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .nav-lines::before,
+  .nav-lines::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    left: 0;
+  }
+  
+  .nav-lines::before {
+    top: -6px;
+  }
+  
+  .nav-lines::after {
+    top: 6px;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #FFE5EC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding-top: 4rem;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .nav-menu.open {
+    width: 250px;
+    height: 360px;
+    border-radius: 50% / 40%;
+    opacity: 1;
+    pointer-events: auto;
+    padding-top: 4rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-menu a {
+    color: #5C2C06;
+    text-decoration: none;
+    margin: 0.75rem 0;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  /* Portfolio Title */
+  .portfolio {
+    text-align: center;
+    font-size: 60px;
+    color: #5C2C06;
+    padding: 0.5rem;
+    margin-top: 6rem;
+    font-weight: 1000;
+  }
+  
+  #portfolio-typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* ------------------ GITHUB SECTION ------------------ */
+  .github-calendar {
+    background: #fff;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .github-calendar h3 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .github-calendar p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .github-calendar img {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 1rem;
+    border-radius: 8px;
+  }
+
+  /* Portfolio Section */
+  .portfolio-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 90%;
+    margin: auto;
+    padding: 2rem 0;
+  }
+  
+  .portfolio-card {
+    background-color: #FFE5EC;
+    border-left: 8px solid #5C2C06;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-video video {
+    width: 80%;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .project-title {
+    font-size: 20px;
+    color: #5C2C06;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+  
+  .project-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .tech-icons img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .project-links {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .project-links img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .project-links img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .project-subsection {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px dashed #ccc;
+  }
+  
+  /* Courses */
+  .course-scroll-wrapper {
+    position: relative;
+  }
+  
+  .course-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+  }
+  
+  .course-card {
+    background-color: #FFF5F8;
+    border-left: 6px solid #5C2C06;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 48%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .course-card .project-video video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+  }
+  
+  .course-card .project-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5C2C06;
+    margin-bottom: 0.3rem;
+  }
+  
+  .course-card .project-date {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 0.8rem;
+  }
+  
+  .course-card .project-description {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .course-card .tech-icons,
+  .course-card .project-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .course-card .tech-icons img,
+  .course-card .project-links img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .course-card .project-links img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #5C2C06;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scroll-button:hover {
+    opacity: 1;
+  }
+  
+  .scroll-button.left {
+    left: -10px;
+  }
+  
+  .scroll-button.right {
+    right: -10px;
+  }
+  
+  .course-scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .course-scroll-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 3rem 1rem 5rem;
+  }
+  
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .icons > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icons img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .icons img:hover {
+    transform: scale(1.15);
+  }
+  
+  footer .copyright {
+    font-size: 12px;
+    color: #5C2C06;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 800px) {
+    nav.desktop-nav {
+      display: none;
+    }
+  
+    .mobile-nav {
+      display: block;
+    }
+
+    .github-calendar h3 {
+      font-size: 20px;
+    }
+  
+    .course-card {
+      width: 100%;
+    }
+  
+    .scroll-button.left,
+    .scroll-button.right {
+      display: none;
+    }
+  
+    .icons {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+  
+    .copyright {
+      padding: 3rem;
+      font-size: 10px;
+    }
+  
+    .portfolio {
+      font-size: 32px;
+    }
+  
+    .nav-menu a {
+      font-size: 0.95rem;
+    }
+
+    .tech-icons {
+      font-size: 12px;
+    }
+
+    .project-links {
+      font-size: 12px;
+    }
+  
+    .icons img {
+      width: 28px;
+      height: 28px;
+    }
+  } 
+  </style>
 </head>
 <body>
-  <!-- Desktop Navigation (Visible above 800px) -->
+  <!-- Desktop Navigation -->
   <nav class="desktop-nav">
-    <a href="index.html">Home</a>
+    <a href="home.html">Home</a>
     <a href="about.html">About</a>
     <a href="resume.html">Resume</a>
     <a href="services.html">Services</a>
@@ -20,13 +491,13 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Mobile Oval Navigation (Visible 800px and below) -->
+  <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <div class="nav-toggle" id="navToggle">
       <div class="nav-lines"></div>
     </div>
     <div class="nav-menu" id="navMenu">
-      <a href="index.html">Home</a>
+      <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="resume.html">Resume</a>
       <a href="services.html">Services</a>
@@ -75,7 +546,7 @@
                 <img src="Visual Studio Code Groovy.png" alt="Visual Studio Code">
             </p>
             <p class="project-links"> Links:
-                <a href="https://www.astraluxspace.com" target="_blank">
+                <a href="https://astraluxspace.com" target="_blank">
                     <img src="AL Groovy.png" alt="Visit Website">
                 </a>
                 <a href="https://github.com/jaslinpride/astraluxsidera" target="_blank">
@@ -107,7 +578,7 @@
                   </p>
             </div>
         </div>
-
+      <section class="portfolio-section">
         <div class="portfolio-card">
             <h3>Web Development Projects</h3>
             <div class="project-video">
@@ -124,7 +595,7 @@
                 <img src="Visual Studio Code Groovy.png" alt="Visual Studio Code">
             </p>
             <p class="project-links"> Links:
-                <a href="https://www.terianajaslinpride.com" target="_blank">
+                <a href="https://terianajaslinpride.netlify.app/home" target="_blank">
                     <img src="Jas Logo Brown.png" alt="Jas">
                 </a>
                 <a href="https://github.com/jaslinpride/jaslinsportfolio" target="_blank">
@@ -133,6 +604,37 @@
               </p>
         </div>
     </section>
+
+    <div class="portfolio-card">
+      <h3>Courses Taken</h3>
+      <div class="course-scroll-wrapper">
+          <button class="scroll-button left">&#10094;</button>
+          <div class="course-scroll-container">
+              <div class="course-card horizontal">
+                  <h4 class="project-title">Python</h4>
+                  <p class="project-date">2025 – Present</p>
+                  <p class="project-description">Taking advanced course in Python.</p>
+                  <div class="tech-icons">Language & Tools: 
+                      <img src="Python Groovy.png" alt="Python">
+                      <img src="Visual Studio Code Groovy.png" alt="VS Code">
+                  </div>
+                  <div class="project-links">Links:
+                      <a href="https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/9373054?start=750#overview" target="_blank">
+                          <img src="Udemy Groovy.png" alt="Udemy Course Website">
+                      </a>
+                      <a href="https://docs.google.com/document/d/1ETXn_s_x-xfuueF1wPbMa8zmlRlc7lzoWslbvOEf-Tw/edit?usp=sharing" target="_blank">
+                          <img src="Google Drive Groovy.png" alt="Google Drive Notes">
+                      </a>
+                      <a href="https://github.com/yourusername/courses-taken" target="_blank">
+                          <img src="GitHub Groovy.png" alt="GitHub Repo">
+                      </a>
+                  </div>
+              </div>
+          </div>
+          <button class="scroll-button right">&#10095;</button>
+      </div>
+  </div>
+</section>
 
     <footer>
         <div class="icons">
@@ -156,6 +658,82 @@
             <p>&copy; Engineering Fueled by Coffee 2025.</p>
         </div>
     </footer>
-    <script src="portfolio.js"></script>
+  <script>
+  // Typewriter Effect for Portfolio Title
+  document.addEventListener("DOMContentLoaded", function () {
+      const text = "Portfolio";
+      const element = document.getElementById("portfolio-typewriter");
+      let index = 0;
+    
+      function typeWriter() {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 120);
+        }
+      }
+    
+      typeWriter();
+    
+      // Horizontal scroll for course section
+      const scrollContainer = document.querySelector('.course-scroll-container');
+      const scrollLeftBtn = document.querySelector('.scroll-button.left');
+      const scrollRightBtn = document.querySelector('.scroll-button.right');
+    
+      if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+        scrollLeftBtn.addEventListener('click', () => {
+          scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        scrollRightBtn.addEventListener('click', () => {
+          scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+      }
+  
+       // 3. GitHub Contributions Count (last 12 months)
+       const username = "jaslinpride";
+       fetch(`https://api.github.com/users/${username}/events/public`)
+         .then((response) => response.json())
+         .then((events) => {
+           const oneYearAgo = new Date();
+           oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+     
+           const contributions = events.filter((event) => {
+             const eventDate = new Date(event.created_at);
+             return eventDate >= oneYearAgo;
+           }).length;
+     
+           const detailPara = document.createElement("p");
+           detailPara.innerHTML = `<strong>${contributions} contributions in the last year</strong>`;
+           const calendar = document.querySelector(".github-calendar");
+           if (calendar) {
+             calendar.insertBefore(detailPara, calendar.querySelector("img"));
+           }
+         })
+         .catch((err) => console.error("Failed to load GitHub contributions:", err));
+    
+      // Coffee Sound Effects on Social Icons
+      const iconImages = document.querySelectorAll(".icons img");
+      iconImages.forEach(img => {
+        const soundFile = img.getAttribute("data-sound");
+        if (soundFile) {
+          const audio = new Audio(soundFile);
+          img.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+        }
+      });
+    
+      // Mobile Nav Toggle
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+    
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("open");
+        });
+      }
+    });  
+  </script>
 </body>
 </html>

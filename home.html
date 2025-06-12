@@ -5,14 +5,257 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Portfolio Website</title>
-  <link rel="stylesheet" href="home.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: url('CS.png') no-repeat center center fixed;
+      background-size: cover;
+      background-color: #e1d1c6;
+      color: #5C2C06;
+    }
+
+    /* ------------------ NAVIGATION ------------------ */
+    nav.desktop-nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 1000;
+    }
+
+    nav.desktop-nav a {
+      color: #5C2C06;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav.desktop-nav a:hover {
+      background-color: #FFE5EC;
+      color: #8B4513;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 999;
+    }
+
+    .nav-toggle {
+      width: 50px;
+      height: 50px;
+      background-color: #5C2C06;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-lines {
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    .nav-lines::before,
+    .nav-lines::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      left: 0;
+    }
+
+    .nav-lines::before {
+      top: -6px;
+    }
+
+    .nav-lines::after {
+      top: 6px;
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: #FFE5EC;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding-top: 4rem;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .nav-menu.open {
+      width: 250px;
+      height: 360px;
+      border-radius: 50% / 40%;
+      opacity: 1;
+      pointer-events: auto;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-menu a {
+      color: #5C2C06;
+      text-decoration: none;
+      margin: 0.75rem 0;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    /* ------------------ TITLE & WELCOME ------------------ */
+    .title-section {
+      text-align: center;
+      margin-top: 8rem;
+    }
+
+    .title-section h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #5C2C06;
+    }
+
+    .title-section h2 {
+      font-size: 20px;
+      color: #8B4513;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    .welcome {
+      text-align: center;
+      font-size: 24px;
+      margin: 4rem 1rem;
+      font-weight: 600;
+    }
+
+    #typewriter-text::after {
+      content: '|';
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* ------------------ FOOTER ------------------ */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 5rem;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .icons img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-top: 14rem;
+    }
+
+    .icons img:hover {
+      transform: scale(1.15);
+    }
+
+    footer .copyright {
+      font-size: 12px;
+      color: #5C2C06;
+    }
+
+    /* ------------------ SCROLL REVEAL ------------------ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease-out;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    /* ------------------ RESPONSIVE ------------------ */
+    @media (max-width: 800px) {
+      nav.desktop-nav {
+        display: none;
+      }
+
+      .mobile-nav {
+        display: block;
+      }
+
+      .title-section h1 {
+        font-size: 28px;
+      }
+
+      .title-section h2 {
+        font-size: 16px;
+      }
+
+      .welcome {
+        font-size: 20px;
+      }
+
+      .nav-menu a {
+        font-size: 0.95rem;
+      }
+
+      .icons img {
+        width: 28px;
+        height: 28px;
+        margin-top: 14rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Desktop Navigation (Visible above 800px) -->
+  <!-- Desktop Navigation -->
   <nav class="desktop-nav">
     <a href="home.html">Home</a>
     <a href="about.html">About</a>
@@ -22,7 +265,7 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Mobile Oval Navigation (Visible 800px and below) -->
+  <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <div class="nav-toggle" id="navToggle">
       <div class="nav-lines"></div>
@@ -73,6 +316,64 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="home.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Typewriter Effect
+      const text = "Creativity brewed, portfolio refined.";
+      const element = document.getElementById("typewriter-text");
+      let index = 0;
+
+      function typeWriter() {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(typeWriter, 100);
+        }
+      }
+
+      typeWriter();
+
+      // 2. Coffee Sound Effects on Hover
+      const iconImages = document.querySelectorAll(".icons img");
+
+      iconImages.forEach((img) => {
+        const soundFile = img.getAttribute("data-sound");
+        if (soundFile) {
+          const audio = new Audio(soundFile);
+          img.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+        }
+      });
+
+      // 3. Scroll Reveal Animation
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      revealElements.forEach((el) => observer.observe(el));
+
+      // 4. Mobile Oval Menu Toggle
+      const navToggle = document.getElementById("navToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("open");
+        });
+      }
+    });
+  </script>
 </body>
 </html>
